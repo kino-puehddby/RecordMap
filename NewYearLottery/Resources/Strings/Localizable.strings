@@ -1,0 +1,10 @@
+// Localizable.string
+"Common.Dot_St"="[.st]";
+"Common.Ok"="OK";
+"Common.Cancel"="キャンセル";
+"Common.Done"="完了";
+"Common.Retry"="リトライ";
+"Common.Close.ja"="閉じる";
+"Common.Close.en"="CLOSE";
+"Common.Price.value"="¥%@";
+"Common.Count.value"="%@件";
