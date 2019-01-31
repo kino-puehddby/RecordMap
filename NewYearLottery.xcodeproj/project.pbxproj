@@ -172,6 +172,15 @@
 			path = Generated;
 			sourceTree = "<group>";
 		};
+		4ECCBEB02202FCF00045CE1D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4EF5980F2202AEE500B84379 /* AppDelegate.swift */,
+				4EF598112202AEE500B84379 /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		4EF598032202AEE500B84379 = {
 			isa = PBXGroup;
 			children = (
@@ -198,10 +207,9 @@
 			isa = PBXGroup;
 			children = (
 				4ECCBE862202B8170045CE1D /* UserInterface */,
+				4ECCBEB02202FCF00045CE1D /* ViewController */,
 				4ECCBE872202D75A0045CE1D /* Resources */,
 				4ECCBE8B2202D8170045CE1D /* Units */,
-				4EF5980F2202AEE500B84379 /* AppDelegate.swift */,
-				4EF598112202AEE500B84379 /* ViewController.swift */,
 				4EF5981B2202AEE700B84379 /* Info.plist */,
 			);
 			path = NewYearLottery;
