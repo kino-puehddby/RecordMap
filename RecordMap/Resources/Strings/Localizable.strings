@@ -1,4 +1,8 @@
 // Localizable.string
+"Annotation.title"="I'm here";
+"Annotation.subtitle"="foo";
+
+// Sample
 "Common.Ok"="OK";
 "Common.Cancel"="キャンセル";
 "Common.Done"="完了";
@@ -7,6 +11,3 @@
 "Common.Close.en"="CLOSE";
 "Common.Price.value"="¥%@";
 "Common.Count.value"="%@件";
-
-"Annotation.title"="I'm here";
-"Annotation.subtitle"="foo";

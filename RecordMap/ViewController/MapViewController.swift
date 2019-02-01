@@ -82,8 +82,8 @@ extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         // called when user location is updated
         if let coordinate = locations.last?.coordinate {
-            latitudeValue.text = coordinate.latitude.description
-            longitudeValue.text = coordinate.longitude.description
+            latitudeValue.text = (round(coordinate.latitude) / 10).description
+            longitudeValue.text = (round(coordinate.longitude) / 10).description
             setRegion(coordinate: coordinate)
             
             // put a pin
@@ -93,6 +93,18 @@ extension MapViewController: CLLocationManagerDelegate {
             annotation.subtitle = L10n.Annotation.subtitle
             mapView.addAnnotation(annotation)
             mapView.selectAnnotation(annotation, animated: true)
+            
+            let circle = MKCircle(center: coordinate, radius: Map.circleRadius)
+            mapView.addOverlay(circle)
         }
+    }
+}
+
+extension MapViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let circleView = MKCircleRenderer(overlay: overlay)
+        circleView.fillColor = .red
+        circleView.alpha = 0.9
+        return circleView
     }
 }
