@@ -12,13 +12,18 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name
 internal enum L10n {
 
+  internal enum Annotation {
+    /// foo
+    internal static let subtitle = L10n.tr("Localizable", "Annotation.subtitle")
+    /// I'm here
+    internal static let title = L10n.tr("Localizable", "Annotation.title")
+  }
+
   internal enum Common {
     /// キャンセル
     internal static let cancel = L10n.tr("Localizable", "Common.Cancel")
     /// 完了
     internal static let done = L10n.tr("Localizable", "Common.Done")
-    /// [.st]
-    internal static let dotSt = L10n.tr("Localizable", "Common.Dot_St")
     /// OK
     internal static let ok = L10n.tr("Localizable", "Common.Ok")
     /// リトライ

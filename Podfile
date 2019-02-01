@@ -5,6 +5,9 @@ def install_pods
     # Resource
     pod 'SwiftGen', '~> 6.0.2'
     pod 'SwiftLint', '~> 0.27.0'
+
+    # UI
+    pod 'Reusable'
 end
 
 target 'RecordMap' do
