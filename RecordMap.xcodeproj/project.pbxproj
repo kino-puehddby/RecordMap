@@ -28,8 +28,6 @@
 		4EF598252202AEE700B84379 /* RecordMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF598242202AEE700B84379 /* RecordMapTests.swift */; };
 		4EF598302202AEE700B84379 /* RecordMapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5982F2202AEE700B84379 /* RecordMapUITests.swift */; };
 		69C4786813AC9AE25A5F291E /* Pods_RecordMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5725DAE8C820FEE1556625DF /* Pods_RecordMap.framework */; };
-		BF0480E65F55D3218BAAB331 /* Pods_NewYearLotteryUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F5317C4124E7C54177483E /* Pods_NewYearLotteryUITests.framework */; };
-		DE343397E5253C78EB2A5FD1 /* Pods_NewYearLotteryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4BB7F5A865F81C4C45483F3 /* Pods_NewYearLotteryTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,7 +111,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE343397E5253C78EB2A5FD1 /* Pods_NewYearLotteryTests.framework in Frameworks */,
 				05C1687DC2807262C0FA1A56 /* Pods_RecordMapTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -122,7 +119,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF0480E65F55D3218BAAB331 /* Pods_NewYearLotteryUITests.framework in Frameworks */,
 				29DB66FAE9AAD01A7AA51497 /* Pods_RecordMapUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -180,7 +176,8 @@
 			children = (
 				4ECCBE8C2202D8230045CE1D /* Generated */,
 			);
-			path = Units;
+			name = Units;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		4ECCBE8C2202D8230045CE1D /* Generated */ = {
@@ -201,13 +198,6 @@
 				4EF598112202AEE500B84379 /* ViewController.swift */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		4ECCBEB322030A2D0045CE1D /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		4EF598032202AEE500B84379 = {
@@ -237,7 +227,6 @@
 			children = (
 				4ECCBE862202B8170045CE1D /* UserInterface */,
 				4ECCBEB02202FCF00045CE1D /* ViewController */,
-				4ECCBEB322030A2D0045CE1D /* View */,
 				4ECCBE872202D75A0045CE1D /* Resources */,
 				4ECCBE8B2202D8170045CE1D /* Units */,
 				4EF5981B2202AEE700B84379 /* Info.plist */,
@@ -614,6 +603,7 @@
 /* Begin XCBuildConfiguration section */
 		4EF598322202AEE700B84379 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35F10D0B8831DE68D3375DE9 /* Pods-RecordMap.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -675,6 +665,7 @@
 		};
 		4EF598332202AEE700B84379 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDA09C7F70FCA5E02B943640 /* Pods-RecordMap.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -745,7 +736,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hisayasugita.NewYearLottery;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hisayasugita.RecordMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -769,7 +760,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hisayasugita.NewYearLottery;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hisayasugita.RecordMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -784,13 +775,13 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P55D3D23US;
-				INFOPLIST_FILE = NewYearLotteryTests/Info.plist;
+				INFOPLIST_FILE = RecordMapTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hisayasugita.NewYearLotteryTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hisayasugita.RecordMapTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -806,13 +797,13 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P55D3D23US;
-				INFOPLIST_FILE = NewYearLotteryTests/Info.plist;
+				INFOPLIST_FILE = RecordMapTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hisayasugita.NewYearLotteryTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hisayasugita.RecordMapTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -827,17 +818,17 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P55D3D23US;
-				INFOPLIST_FILE = NewYearLotteryUITests/Info.plist;
+				INFOPLIST_FILE = RecordMapUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hisayasugita.NewYearLotteryUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hisayasugita.RecordMapUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = NewYearLottery;
+				TEST_TARGET_NAME = RecordMap;
 			};
 			name = Debug;
 		};
@@ -848,17 +839,17 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P55D3D23US;
-				INFOPLIST_FILE = NewYearLotteryUITests/Info.plist;
+				INFOPLIST_FILE = RecordMapUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hisayasugita.NewYearLotteryUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hisayasugita.RecordMapUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = NewYearLottery;
+				TEST_TARGET_NAME = RecordMap;
 			};
 			name = Release;
 		};

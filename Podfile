@@ -8,7 +8,7 @@ def install_pods
 end
 
 target 'RecordMap' do
-  # Pods for NewYearLottery
+  # Pods for RecordMap
   install_pods
 
   target 'RecordMapTests' do

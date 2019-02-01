@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  NewYearLottery
+//  RecordMap
 //
 //  Created by 杉田 尚哉 on 2019/01/31.
 //  Copyright © 2019 hisayasugita. All rights reserved.

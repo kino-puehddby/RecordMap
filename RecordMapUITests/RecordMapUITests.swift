@@ -1,6 +1,6 @@
 //
-//  NewYearLotteryUITests.swift
-//  NewYearLotteryUITests
+//  RecordMapUITests.swift
+//  RecordMapUITests
 //
 //  Created by 杉田 尚哉 on 2019/01/31.
 //  Copyright © 2019 hisayasugita. All rights reserved.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class NewYearLotteryUITests: XCTestCase {
+class RecordMapUITests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

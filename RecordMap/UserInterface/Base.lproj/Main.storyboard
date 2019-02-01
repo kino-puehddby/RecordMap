@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NewYearLottery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RecordMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,7 +37,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="90" height="25"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="25" id="7WM-7X-hOv"/>
-                                                            <constraint firstAttribute="width" constant="90" id="wXn-rU-Q4X"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="NmE-Ur-o9R"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -46,7 +46,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LhK-Pj-twZ">
                                                         <rect key="frame" x="100" y="0.0" width="200" height="25"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="200" id="91D-u0-SiF"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="91D-u0-SiF"/>
                                                             <constraint firstAttribute="height" constant="25" id="arq-Uu-2QU"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -61,8 +61,8 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longitude:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bx3-Qv-eIg">
                                                         <rect key="frame" x="0.0" y="0.0" width="90" height="25"/>
                                                         <constraints>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="A45-B7-h8h"/>
                                                             <constraint firstAttribute="height" constant="25" id="SGB-fo-Zxe"/>
-                                                            <constraint firstAttribute="width" constant="90" id="rOF-bH-042"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -71,7 +71,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FT3-UF-c62">
                                                         <rect key="frame" x="100" y="0.0" width="200" height="25"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="200" id="4UE-jR-i1V"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="4UE-jR-i1V"/>
                                                             <constraint firstAttribute="height" constant="25" id="q6X-wV-Uuo"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
