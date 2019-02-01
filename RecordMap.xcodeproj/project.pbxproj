@@ -28,7 +28,6 @@
 
 /* Begin PBXFileReference section */
 		35F10D0B8831DE68D3375DE9 /* Pods-RecordMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecordMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RecordMap/Pods-RecordMap.debug.xcconfig"; sourceTree = "<group>"; };
-		37209C8E891A822BF3EE2D6A /* Pods-NewYearLottery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewYearLottery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NewYearLottery/Pods-NewYearLottery.debug.xcconfig"; sourceTree = "<group>"; };
 		4ECCBE892202D78F0045CE1D /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		4ECCBE9D2202D99D0045CE1D /* StoryboardScenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoryboardScenes.swift; path = RecordMap/Utils/Generated/StoryboardScenes.swift; sourceTree = SOURCE_ROOT; };
 		4ECCBE9E2202D99D0045CE1D /* StoryboardSegues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoryboardSegues.swift; path = RecordMap/Utils/Generated/StoryboardSegues.swift; sourceTree = SOURCE_ROOT; };
@@ -48,20 +47,12 @@
 		4EF598192202AEE700B84379 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4EF5981B2202AEE700B84379 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5725DAE8C820FEE1556625DF /* Pods_RecordMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecordMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		86C0C8F26DB98A261395226A /* Pods-NewYearLotteryUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewYearLotteryUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NewYearLotteryUITests/Pods-NewYearLotteryUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8E0C960EE10EFB43F93BE94F /* Pods-RecordMapUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecordMapUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RecordMapUITests/Pods-RecordMapUITests.release.xcconfig"; sourceTree = "<group>"; };
-		A154CDA41A004C7BE7FF5A9A /* Pods-NewYearLottery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewYearLottery.release.xcconfig"; path = "Pods/Target Support Files/Pods-NewYearLottery/Pods-NewYearLottery.release.xcconfig"; sourceTree = "<group>"; };
 		A6F6E55776D05D6AB14FE104 /* Pods_RecordMapUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecordMapUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B2F5317C4124E7C54177483E /* Pods_NewYearLotteryUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewYearLotteryUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5275EC97E9E518CCE76C1DB /* Pods-RecordMapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecordMapTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RecordMapTests/Pods-RecordMapTests.release.xcconfig"; sourceTree = "<group>"; };
-		C3736CE4B70FC5944DEFBDA2 /* Pods-NewYearLotteryUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewYearLotteryUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NewYearLotteryUITests/Pods-NewYearLotteryUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CDA09C7F70FCA5E02B943640 /* Pods-RecordMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecordMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-RecordMap/Pods-RecordMap.release.xcconfig"; sourceTree = "<group>"; };
-		D4BB7F5A865F81C4C45483F3 /* Pods_NewYearLotteryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewYearLotteryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF156C2648EB65153770C752 /* Pods_NewYearLottery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewYearLottery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DFA4794DF0FA35416A04601F /* Pods-NewYearLotteryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewYearLotteryTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NewYearLotteryTests/Pods-NewYearLotteryTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E14BEF85AD4893A034AB1A66 /* Pods-RecordMapUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecordMapUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RecordMapUITests/Pods-RecordMapUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E590D7435D935D883DECC4FD /* Pods_RecordMapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecordMapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E8C4981718DC01323FBEE1AF /* Pods-NewYearLotteryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewYearLotteryTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NewYearLotteryTests/Pods-NewYearLotteryTests.release.xcconfig"; sourceTree = "<group>"; };
 		E8EFA3E7376717932BA87FD2 /* Pods-RecordMapTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecordMapTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RecordMapTests/Pods-RecordMapTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,12 +77,6 @@
 		1070DD829AF5EB0BBC74A00C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				37209C8E891A822BF3EE2D6A /* Pods-NewYearLottery.debug.xcconfig */,
-				A154CDA41A004C7BE7FF5A9A /* Pods-NewYearLottery.release.xcconfig */,
-				DFA4794DF0FA35416A04601F /* Pods-NewYearLotteryTests.debug.xcconfig */,
-				E8C4981718DC01323FBEE1AF /* Pods-NewYearLotteryTests.release.xcconfig */,
-				86C0C8F26DB98A261395226A /* Pods-NewYearLotteryUITests.debug.xcconfig */,
-				C3736CE4B70FC5944DEFBDA2 /* Pods-NewYearLotteryUITests.release.xcconfig */,
 				35F10D0B8831DE68D3375DE9 /* Pods-RecordMap.debug.xcconfig */,
 				CDA09C7F70FCA5E02B943640 /* Pods-RecordMap.release.xcconfig */,
 				E8EFA3E7376717932BA87FD2 /* Pods-RecordMapTests.debug.xcconfig */,
@@ -196,9 +181,6 @@
 				4ECCBEA72202DA0C0045CE1D /* RxCocoa.framework */,
 				4ECCBEA52202DA0C0045CE1D /* RxSwift.framework */,
 				4ECCBEA62202DA0C0045CE1D /* SnapKit.framework */,
-				DF156C2648EB65153770C752 /* Pods_NewYearLottery.framework */,
-				D4BB7F5A865F81C4C45483F3 /* Pods_NewYearLotteryTests.framework */,
-				B2F5317C4124E7C54177483E /* Pods_NewYearLotteryUITests.framework */,
 				5725DAE8C820FEE1556625DF /* Pods_RecordMap.framework */,
 				E590D7435D935D883DECC4FD /* Pods_RecordMapTests.framework */,
 				A6F6E55776D05D6AB14FE104 /* Pods_RecordMapUITests.framework */,
@@ -226,7 +208,7 @@
 			dependencies = (
 			);
 			name = RecordMap;
-			productName = NewYearLottery;
+			productName = RecordMap;
 			productReference = 4EF5980C2202AEE500B84379 /* RecordMap.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -453,7 +435,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -509,7 +491,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
