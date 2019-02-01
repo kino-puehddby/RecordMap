@@ -1,18 +1,18 @@
 ib:
-  inputs: NewYearLottery/UserInterface
+  inputs: RecordMap/UserInterface
   outputs:
     - templateName: scenes-swift4
-      output: NewYearLottery/Utils/Generated/StoryboardScenes.swift
+      output: RecordMap/Utils/Generated/StoryboardScenes.swift
     - templateName: segues-swift4
-      output: NewYearLottery/Utils/Generated/StoryboardSegues.swift
+      output: RecordMap/Utils/Generated/StoryboardSegues.swift
 xcassets:
   inputs:
-    - NewYearLottery/Resources/Assets.xcassets
+    - RecordMap/Resources/Assets.xcassets
   outputs:
     - templateName: swift4
-      output: NewYearLottery/Utils/Generated/Assets.swift
+      output: RecordMap/Utils/Generated/Assets.swift
 strings:
-    inputs: NewYearLottery/Resources/Strings/Localizable.strings
+    inputs: RecordMap/Resources/Strings/Localizable.strings
     outputs:
         templateName: structured-swift4
-        output: NewYearLottery/Utils/Generated/LocalizableStrings.swift
+        output: RecordMap/Utils/Generated/LocalizableStrings.swift

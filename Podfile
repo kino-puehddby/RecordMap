@@ -7,16 +7,16 @@ def install_pods
     pod 'SwiftLint', '~> 0.27.0'
 end
 
-target 'NewYearLottery' do
+target 'RecordMap' do
   # Pods for NewYearLottery
   install_pods
 
-  target 'NewYearLotteryTests' do
+  target 'RecordMapTests' do
     inherit! :search_paths
     # Pods for testing
   end
 
-  target 'NewYearLotteryUITests' do
+  target 'RecordMapUITests' do
     inherit! :search_paths
     # Pods for testing
   end
