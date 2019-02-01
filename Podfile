@@ -10,15 +10,4 @@ end
 target 'RecordMap' do
   # Pods for RecordMap
   install_pods
-
-  target 'RecordMapTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'RecordMapUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
 end
