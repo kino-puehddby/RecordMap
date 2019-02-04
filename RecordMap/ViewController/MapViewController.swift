@@ -86,14 +86,15 @@ extension MapViewController: CLLocationManagerDelegate {
             longitudeValue.text = (round(coordinate.longitude) / 10).description
             setRegion(coordinate: coordinate)
             
-            // put a pin
+            // remove pins & put a pin
+            mapView.removeAnnotations(mapView.annotations)
             let annotation = MKPointAnnotation()
             annotation.coordinate = coordinate
             annotation.title = L10n.Annotation.title
-            annotation.subtitle = L10n.Annotation.subtitle
             mapView.addAnnotation(annotation)
             mapView.selectAnnotation(annotation, animated: true)
             
+            // draw circle
             let circle = MKCircle(center: coordinate, radius: Map.circleRadius)
             mapView.addOverlay(circle)
         }

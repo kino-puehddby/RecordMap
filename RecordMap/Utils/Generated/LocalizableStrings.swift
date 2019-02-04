@@ -13,8 +13,6 @@ import Foundation
 internal enum L10n {
 
   internal enum Annotation {
-    /// foo
-    internal static let subtitle = L10n.tr("Localizable", "Annotation.subtitle")
     /// I'm here
     internal static let title = L10n.tr("Localizable", "Annotation.title")
   }
