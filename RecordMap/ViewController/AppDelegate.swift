@@ -12,8 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var backgroundTaskID = UIBackgroundTaskIdentifier(rawValue: 0)
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
@@ -21,12 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillResignActive(_ application: UIApplication) {
         // バックグラウンド状態になる直前に呼ばれる
-        
-        self.backgroundTaskID = application.beginBackgroundTask(expirationHandler: { [weak self] in
-            guard let vc = self else { return }
-            application.endBackgroundTask(vc.backgroundTaskID)
-            vc.backgroundTaskID = UIBackgroundTaskIdentifier.invalid
-        })
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
@@ -40,7 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // アプリがアクティブになるときに呼ばれる
-        application.endBackgroundTask(self.backgroundTaskID)
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
