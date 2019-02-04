@@ -14,4 +14,13 @@ public struct Map {
     public static let longitudeDelta: CLLocationDegrees = 0.003
     public static let distanceFilter: CLLocationDistance = 5
     public static let circleRadius: CLLocationDistance = 10
+    
+    public struct FloatingPanel {
+        // A top inset from safe area
+        public static let fullPosition = UIScreen.main.bounds.height * 0.1
+        // A bottom inset from the safe area
+        public static let tipPosition = UIScreen.main.bounds.height * 0.12
+        public static let sideSpace: CGFloat = 10
+        public static let width = UIScreen.main.bounds.width - sideSpace * 2
+    }
 }

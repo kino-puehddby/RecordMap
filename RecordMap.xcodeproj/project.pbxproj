@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E3453EE2208415F007DAC66 /* FloatingPanel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E3453ED2208415E007DAC66 /* FloatingPanel.framework */; };
+		4E3453F0220843B3007DAC66 /* SemiModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3453EF220843B3007DAC66 /* SemiModalViewController.swift */; };
+		4E3453F222084425007DAC66 /* SemiModal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E3453F122084425007DAC66 /* SemiModal.storyboard */; };
 		4EBA460D22041BF800AB71B1 /* PromoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EBA460C22041BF800AB71B1 /* PromoteView.xib */; };
 		4EBA460F22041C1B00AB71B1 /* PromoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBA460E22041C1B00AB71B1 /* PromoteView.swift */; };
 		4EBA46132204305C00AB71B1 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBA46122204305C00AB71B1 /* Const.swift */; };
@@ -31,6 +34,9 @@
 
 /* Begin PBXFileReference section */
 		35F10D0B8831DE68D3375DE9 /* Pods-RecordMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecordMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RecordMap/Pods-RecordMap.debug.xcconfig"; sourceTree = "<group>"; };
+		4E3453ED2208415E007DAC66 /* FloatingPanel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FloatingPanel.framework; path = Carthage/Build/iOS/FloatingPanel.framework; sourceTree = "<group>"; };
+		4E3453EF220843B3007DAC66 /* SemiModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalViewController.swift; sourceTree = "<group>"; };
+		4E3453F122084425007DAC66 /* SemiModal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SemiModal.storyboard; sourceTree = "<group>"; };
 		4EBA460C22041BF800AB71B1 /* PromoteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromoteView.xib; sourceTree = "<group>"; };
 		4EBA460E22041C1B00AB71B1 /* PromoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PromoteView.swift; path = /Users/sugitahisaya/github/RecordMap/RecordMap/View/PromoteView.swift; sourceTree = "<absolute>"; };
 		4EBA46122204305C00AB71B1 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
@@ -67,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E3453EE2208415F007DAC66 /* FloatingPanel.framework in Frameworks */,
 				4ECCBEB22202FF2F0045CE1D /* CoreLocation.framework in Frameworks */,
 				4ECCBEAF2202DB4F0045CE1D /* RxAtomic.framework in Frameworks */,
 				4ECCBEAD2202DB0D0045CE1D /* RxBlocking.framework in Frameworks */,
@@ -106,6 +113,7 @@
 			children = (
 				4EF598182202AEE700B84379 /* LaunchScreen.storyboard */,
 				4EF598132202AEE500B84379 /* Main.storyboard */,
+				4E3453F122084425007DAC66 /* SemiModal.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -170,6 +178,7 @@
 			children = (
 				4EF5980F2202AEE500B84379 /* AppDelegate.swift */,
 				4EF598112202AEE500B84379 /* MapViewController.swift */,
+				4E3453EF220843B3007DAC66 /* SemiModalViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -208,6 +217,7 @@
 		F5C7B023E6E4A3327C3CCE29 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4E3453ED2208415E007DAC66 /* FloatingPanel.framework */,
 				4ECCBEB12202FF2F0045CE1D /* CoreLocation.framework */,
 				4ECCBEAE2202DB4E0045CE1D /* RxAtomic.framework */,
 				4ECCBEAC2202DB0D0045CE1D /* RxBlocking.framework */,
@@ -284,6 +294,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E3453F222084425007DAC66 /* SemiModal.storyboard in Resources */,
 				4EF5981A2202AEE700B84379 /* LaunchScreen.storyboard in Resources */,
 				4ECCBE8A2202D78F0045CE1D /* Localizable.strings in Resources */,
 				4EF598172202AEE700B84379 /* Assets.xcassets in Resources */,
@@ -370,6 +381,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxAtomic.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FloatingPanel.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputFileListPaths = (
@@ -409,6 +421,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E3453F0220843B3007DAC66 /* SemiModalViewController.swift in Sources */,
 				4EF598122202AEE500B84379 /* MapViewController.swift in Sources */,
 				4EF598102202AEE500B84379 /* AppDelegate.swift in Sources */,
 				4EBA460F22041C1B00AB71B1 /* PromoteView.swift in Sources */,

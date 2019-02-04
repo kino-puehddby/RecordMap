@@ -22,6 +22,11 @@ internal enum StoryboardScene {
 
     internal static let initialScene = InitialSceneType<RecordMap.MapViewController>(storyboard: Main.self)
   }
+  internal enum SemiModal: StoryboardType {
+    internal static let storyboardName = "SemiModal"
+
+    internal static let initialScene = InitialSceneType<RecordMap.SemiModalViewController>(storyboard: SemiModal.self)
+  }
 }
 // swiftlint:enable explicit_type_interface identifier_name line_length type_body_length type_name
 

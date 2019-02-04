@@ -11,6 +11,7 @@ import MapKit
 
 import CoreLocation
 import SnapKit
+import FloatingPanel
 
 final class MapViewController: UIViewController {
 
@@ -18,9 +19,9 @@ final class MapViewController: UIViewController {
     @IBOutlet weak private var latitudeValue: UILabel!
     @IBOutlet weak private var longitudeValue: UILabel!
     
-    var locationManager: CLLocationManager!
-    
-    var promoteView: PromoteView!
+    lazy var floatingPanelController: FloatingPanelController = {preconditionFailure()}()
+    lazy var locationManager: CLLocationManager = {preconditionFailure()}()
+    lazy var promoteView: PromoteView = {preconditionFailure()}()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +32,9 @@ final class MapViewController: UIViewController {
     func setup() {
         // - Location Manager
         locationManager = CLLocationManager()
-        guard let locationManager = locationManager else { return }
-        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest // 最高精度
-
+        
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
             locationManager.distanceFilter = Map.distanceFilter
             locationManager.startUpdatingLocation()
@@ -54,6 +53,16 @@ final class MapViewController: UIViewController {
         promoteView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        
+        // Floating Panel
+        floatingPanelController = FloatingPanelController()
+        floatingPanelController.surfaceView.layer.cornerRadius = 12
+        floatingPanelController.surfaceView.layer.masksToBounds = true
+        floatingPanelController.surfaceView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        floatingPanelController.delegate = self
+        let semiModalVC = StoryboardScene.SemiModal.initialScene.instantiate()
+        floatingPanelController.set(contentViewController: semiModalVC)
+        floatingPanelController.addPanel(toParent: self, belowView: nil, animated: false)
     }
     
     func setRegion(coordinate: CLLocationCoordinate2D) {
@@ -107,5 +116,43 @@ extension MapViewController: MKMapViewDelegate {
         circleView.fillColor = .red
         circleView.alpha = 0.9
         return circleView
+    }
+}
+
+extension MapViewController: FloatingPanelControllerDelegate {
+    func floatingPanelDidEndDragging(_ vc: FloatingPanelController, withVelocity velocity: CGPoint, targetPosition: FloatingPanelPosition) {
+        // TODO: targetPositionが変わった時の処理
+    }
+    
+    func floatingPanel(_ vc: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout? {
+        let floatingPanelLayout = MapViewFloatingPanelLayout()
+        return floatingPanelLayout
+    }
+}
+
+class MapViewFloatingPanelLayout: FloatingPanelLayout {
+    var initialPosition: FloatingPanelPosition {
+        return .tip
+    }
+    var supportedPositions: Set<FloatingPanelPosition> {
+        return [.full, .tip]
+    }
+    
+    func insetFor(position: FloatingPanelPosition) -> CGFloat? {
+        switch position {
+        case .full:
+            return Map.FloatingPanel.fullPosition
+        case .tip:
+            return Map.FloatingPanel.tipPosition
+        default:
+            return nil
+        }
+    }
+    
+    func prepareLayout(surfaceView: UIView, in view: UIView) -> [NSLayoutConstraint] {
+        return [
+            surfaceView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: Map.FloatingPanel.sideSpace),
+            surfaceView.widthAnchor.constraint(equalToConstant: Map.FloatingPanel.width)
+        ]
     }
 }
