@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E3453EE2208415F007DAC66 /* FloatingPanel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E3453ED2208415E007DAC66 /* FloatingPanel.framework */; };
+		4E3453F0220843B3007DAC66 /* SemiModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3453EF220843B3007DAC66 /* SemiModalViewController.swift */; };
+		4E3453F222084425007DAC66 /* SemiModal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E3453F122084425007DAC66 /* SemiModal.storyboard */; };
+		4EBA460D22041BF800AB71B1 /* PromoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EBA460C22041BF800AB71B1 /* PromoteView.xib */; };
+		4EBA460F22041C1B00AB71B1 /* PromoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBA460E22041C1B00AB71B1 /* PromoteView.swift */; };
+		4EBA46132204305C00AB71B1 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBA46122204305C00AB71B1 /* Const.swift */; };
 		4ECCBE8A2202D78F0045CE1D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4ECCBE892202D78F0045CE1D /* Localizable.strings */; };
 		4ECCBEA12202D99D0045CE1D /* StoryboardScenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECCBE9D2202D99D0045CE1D /* StoryboardScenes.swift */; };
 		4ECCBEA22202D99D0045CE1D /* StoryboardSegues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECCBE9E2202D99D0045CE1D /* StoryboardSegues.swift */; };
@@ -18,8 +24,10 @@
 		4ECCBEAD2202DB0D0045CE1D /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECCBEAC2202DB0D0045CE1D /* RxBlocking.framework */; };
 		4ECCBEAF2202DB4F0045CE1D /* RxAtomic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECCBEAE2202DB4E0045CE1D /* RxAtomic.framework */; };
 		4ECCBEB22202FF2F0045CE1D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECCBEB12202FF2F0045CE1D /* CoreLocation.framework */; };
+		4EE4579622094C6A0017B9BF /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE4579522094C6A0017B9BF /* ModalViewController.swift */; };
+		4EE4579A220966480017B9BF /* Modal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EE45799220966480017B9BF /* Modal.storyboard */; };
 		4EF598102202AEE500B84379 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5980F2202AEE500B84379 /* AppDelegate.swift */; };
-		4EF598122202AEE500B84379 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF598112202AEE500B84379 /* ViewController.swift */; };
+		4EF598122202AEE500B84379 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF598112202AEE500B84379 /* MapViewController.swift */; };
 		4EF598152202AEE500B84379 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EF598132202AEE500B84379 /* Main.storyboard */; };
 		4EF598172202AEE700B84379 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EF598162202AEE700B84379 /* Assets.xcassets */; };
 		4EF5981A2202AEE700B84379 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EF598182202AEE700B84379 /* LaunchScreen.storyboard */; };
@@ -28,6 +36,12 @@
 
 /* Begin PBXFileReference section */
 		35F10D0B8831DE68D3375DE9 /* Pods-RecordMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecordMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RecordMap/Pods-RecordMap.debug.xcconfig"; sourceTree = "<group>"; };
+		4E3453ED2208415E007DAC66 /* FloatingPanel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FloatingPanel.framework; path = Carthage/Build/iOS/FloatingPanel.framework; sourceTree = "<group>"; };
+		4E3453EF220843B3007DAC66 /* SemiModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalViewController.swift; sourceTree = "<group>"; };
+		4E3453F122084425007DAC66 /* SemiModal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SemiModal.storyboard; sourceTree = "<group>"; };
+		4EBA460C22041BF800AB71B1 /* PromoteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromoteView.xib; sourceTree = "<group>"; };
+		4EBA460E22041C1B00AB71B1 /* PromoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PromoteView.swift; path = /Users/sugitahisaya/github/RecordMap/RecordMap/View/PromoteView.swift; sourceTree = "<absolute>"; };
+		4EBA46122204305C00AB71B1 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		4ECCBE892202D78F0045CE1D /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		4ECCBE9D2202D99D0045CE1D /* StoryboardScenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoryboardScenes.swift; path = RecordMap/Utils/Generated/StoryboardScenes.swift; sourceTree = SOURCE_ROOT; };
 		4ECCBE9E2202D99D0045CE1D /* StoryboardSegues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoryboardSegues.swift; path = RecordMap/Utils/Generated/StoryboardSegues.swift; sourceTree = SOURCE_ROOT; };
@@ -39,9 +53,11 @@
 		4ECCBEAC2202DB0D0045CE1D /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		4ECCBEAE2202DB4E0045CE1D /* RxAtomic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxAtomic.framework; path = Carthage/Build/iOS/RxAtomic.framework; sourceTree = "<group>"; };
 		4ECCBEB12202FF2F0045CE1D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4EE4579522094C6A0017B9BF /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		4EE45799220966480017B9BF /* Modal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Modal.storyboard; sourceTree = "<group>"; };
 		4EF5980C2202AEE500B84379 /* RecordMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecordMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EF5980F2202AEE500B84379 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4EF598112202AEE500B84379 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4EF598112202AEE500B84379 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		4EF598142202AEE500B84379 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4EF598162202AEE700B84379 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4EF598192202AEE700B84379 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E3453EE2208415F007DAC66 /* FloatingPanel.framework in Frameworks */,
 				4ECCBEB22202FF2F0045CE1D /* CoreLocation.framework in Frameworks */,
 				4ECCBEAF2202DB4F0045CE1D /* RxAtomic.framework in Frameworks */,
 				4ECCBEAD2202DB0D0045CE1D /* RxBlocking.framework in Frameworks */,
@@ -87,11 +104,38 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		4EBA460B22041BDB00AB71B1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4EBA460E22041C1B00AB71B1 /* PromoteView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4EBA461022041C2100AB71B1 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				4EF598182202AEE700B84379 /* LaunchScreen.storyboard */,
+				4EF598132202AEE500B84379 /* Main.storyboard */,
+				4E3453F122084425007DAC66 /* SemiModal.storyboard */,
+				4EE45799220966480017B9BF /* Modal.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		4EBA461122041C3300AB71B1 /* XIBs */ = {
+			isa = PBXGroup;
+			children = (
+				4EBA460C22041BF800AB71B1 /* PromoteView.xib */,
+			);
+			path = XIBs;
+			sourceTree = "<group>";
+		};
 		4ECCBE862202B8170045CE1D /* UserInterface */ = {
 			isa = PBXGroup;
 			children = (
-				4EF598132202AEE500B84379 /* Main.storyboard */,
-				4EF598182202AEE700B84379 /* LaunchScreen.storyboard */,
+				4EBA461022041C2100AB71B1 /* Storyboards */,
+				4EBA461122041C3300AB71B1 /* XIBs */,
 			);
 			path = UserInterface;
 			sourceTree = "<group>";
@@ -117,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				4ECCBE8C2202D8230045CE1D /* Generated */,
+				4EBA46122204305C00AB71B1 /* Const.swift */,
 			);
 			name = Units;
 			path = Utils;
@@ -137,7 +182,9 @@
 			isa = PBXGroup;
 			children = (
 				4EF5980F2202AEE500B84379 /* AppDelegate.swift */,
-				4EF598112202AEE500B84379 /* ViewController.swift */,
+				4EF598112202AEE500B84379 /* MapViewController.swift */,
+				4E3453EF220843B3007DAC66 /* SemiModalViewController.swift */,
+				4EE4579522094C6A0017B9BF /* ModalViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -165,6 +212,7 @@
 			children = (
 				4ECCBE862202B8170045CE1D /* UserInterface */,
 				4ECCBEB02202FCF00045CE1D /* ViewController */,
+				4EBA460B22041BDB00AB71B1 /* View */,
 				4ECCBE872202D75A0045CE1D /* Resources */,
 				4ECCBE8B2202D8170045CE1D /* Units */,
 				4EF5981B2202AEE700B84379 /* Info.plist */,
@@ -175,6 +223,7 @@
 		F5C7B023E6E4A3327C3CCE29 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4E3453ED2208415E007DAC66 /* FloatingPanel.framework */,
 				4ECCBEB12202FF2F0045CE1D /* CoreLocation.framework */,
 				4ECCBEAE2202DB4E0045CE1D /* RxAtomic.framework */,
 				4ECCBEAC2202DB0D0045CE1D /* RxBlocking.framework */,
@@ -202,6 +251,7 @@
 				4ECCBE842202B6350045CE1D /* Swiftlint */,
 				4ECCBE852202B6460045CE1D /* SwiftGen */,
 				4ECCBEAB2202DA160045CE1D /* Carthage Copy Frameworks */,
+				AC29EA166DFDFEFF23F5E306 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -250,10 +300,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E3453F222084425007DAC66 /* SemiModal.storyboard in Resources */,
 				4EF5981A2202AEE700B84379 /* LaunchScreen.storyboard in Resources */,
 				4ECCBE8A2202D78F0045CE1D /* Localizable.strings in Resources */,
 				4EF598172202AEE700B84379 /* Assets.xcassets in Resources */,
 				4EF598152202AEE500B84379 /* Main.storyboard in Resources */,
+				4EE4579A220966480017B9BF /* Modal.storyboard in Resources */,
+				4EBA460D22041BF800AB71B1 /* PromoteView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +388,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxAtomic.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FloatingPanel.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputFileListPaths = (
@@ -345,6 +399,28 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
+		AC29EA166DFDFEFF23F5E306 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RecordMap/Pods-RecordMap-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reusable.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RecordMap/Pods-RecordMap-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -352,10 +428,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EF598122202AEE500B84379 /* ViewController.swift in Sources */,
+				4E3453F0220843B3007DAC66 /* SemiModalViewController.swift in Sources */,
+				4EF598122202AEE500B84379 /* MapViewController.swift in Sources */,
 				4EF598102202AEE500B84379 /* AppDelegate.swift in Sources */,
+				4EBA460F22041C1B00AB71B1 /* PromoteView.swift in Sources */,
 				4ECCBEA42202D99D0045CE1D /* Assets.swift in Sources */,
 				4ECCBEA32202D99D0045CE1D /* LocalizableStrings.swift in Sources */,
+				4EE4579622094C6A0017B9BF /* ModalViewController.swift in Sources */,
+				4EBA46132204305C00AB71B1 /* Const.swift in Sources */,
 				4ECCBEA22202D99D0045CE1D /* StoryboardSegues.swift in Sources */,
 				4ECCBEA12202D99D0045CE1D /* StoryboardScenes.swift in Sources */,
 			);

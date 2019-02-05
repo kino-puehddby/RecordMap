@@ -1,20 +1,28 @@
 PODS:
+  - Reusable (4.0.5):
+    - Reusable/Storyboard (= 4.0.5)
+    - Reusable/View (= 4.0.5)
+  - Reusable/Storyboard (4.0.5)
+  - Reusable/View (4.0.5)
   - SwiftGen (6.0.2)
   - SwiftLint (0.27.0)
 
 DEPENDENCIES:
+  - Reusable
   - SwiftGen (~> 6.0.2)
   - SwiftLint (~> 0.27.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Reusable
     - SwiftGen
     - SwiftLint
 
 SPEC CHECKSUMS:
+  Reusable: 188be1a54ac0691bc66e5bb24ec6eb91971b315b
   SwiftGen: e5b047067aa84082826a0c4f1c4c2ddc95bcf74c
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
 
-PODFILE CHECKSUM: cd11e1feb7f50d1fa1f009a548e57ce49c22f2e5
+PODFILE CHECKSUM: 00012523287bfd3d86c479c41552d9e2d4d106da
 
 COCOAPODS: 1.5.3

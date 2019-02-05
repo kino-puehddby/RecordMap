@@ -1,5 +1,7 @@
 // Localizable.string
-"Common.Dot_St"="[.st]";
+"Annotation.title"="I'm here";
+
+// Sample
 "Common.Ok"="OK";
 "Common.Cancel"="キャンセル";
 "Common.Done"="完了";

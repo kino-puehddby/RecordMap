@@ -23,7 +23,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>位置情報を許可しろよ、この野郎</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>位置情報を許可しろよ、この野郎</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
