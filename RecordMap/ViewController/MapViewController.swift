@@ -58,7 +58,7 @@ final class MapViewController: UIViewController {
             make.edges.equalToSuperview()
         }
         
-        // Floating Panel
+        // - Floating Panel
         floatingPanelController = FloatingPanelController()
         floatingPanelController.surfaceView.layer.cornerRadius = 12
         floatingPanelController.surfaceView.layer.masksToBounds = true
