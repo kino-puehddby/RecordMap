@@ -24,6 +24,8 @@
 		4ECCBEAD2202DB0D0045CE1D /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECCBEAC2202DB0D0045CE1D /* RxBlocking.framework */; };
 		4ECCBEAF2202DB4F0045CE1D /* RxAtomic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECCBEAE2202DB4E0045CE1D /* RxAtomic.framework */; };
 		4ECCBEB22202FF2F0045CE1D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECCBEB12202FF2F0045CE1D /* CoreLocation.framework */; };
+		4EE4579622094C6A0017B9BF /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE4579522094C6A0017B9BF /* ModalViewController.swift */; };
+		4EE4579A220966480017B9BF /* Modal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EE45799220966480017B9BF /* Modal.storyboard */; };
 		4EF598102202AEE500B84379 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5980F2202AEE500B84379 /* AppDelegate.swift */; };
 		4EF598122202AEE500B84379 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF598112202AEE500B84379 /* MapViewController.swift */; };
 		4EF598152202AEE500B84379 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EF598132202AEE500B84379 /* Main.storyboard */; };
@@ -51,6 +53,8 @@
 		4ECCBEAC2202DB0D0045CE1D /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		4ECCBEAE2202DB4E0045CE1D /* RxAtomic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxAtomic.framework; path = Carthage/Build/iOS/RxAtomic.framework; sourceTree = "<group>"; };
 		4ECCBEB12202FF2F0045CE1D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4EE4579522094C6A0017B9BF /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		4EE45799220966480017B9BF /* Modal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Modal.storyboard; sourceTree = "<group>"; };
 		4EF5980C2202AEE500B84379 /* RecordMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecordMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EF5980F2202AEE500B84379 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EF598112202AEE500B84379 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 				4EF598182202AEE700B84379 /* LaunchScreen.storyboard */,
 				4EF598132202AEE500B84379 /* Main.storyboard */,
 				4E3453F122084425007DAC66 /* SemiModal.storyboard */,
+				4EE45799220966480017B9BF /* Modal.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -179,6 +184,7 @@
 				4EF5980F2202AEE500B84379 /* AppDelegate.swift */,
 				4EF598112202AEE500B84379 /* MapViewController.swift */,
 				4E3453EF220843B3007DAC66 /* SemiModalViewController.swift */,
+				4EE4579522094C6A0017B9BF /* ModalViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -299,6 +305,7 @@
 				4ECCBE8A2202D78F0045CE1D /* Localizable.strings in Resources */,
 				4EF598172202AEE700B84379 /* Assets.xcassets in Resources */,
 				4EF598152202AEE500B84379 /* Main.storyboard in Resources */,
+				4EE4579A220966480017B9BF /* Modal.storyboard in Resources */,
 				4EBA460D22041BF800AB71B1 /* PromoteView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,6 +434,7 @@
 				4EBA460F22041C1B00AB71B1 /* PromoteView.swift in Sources */,
 				4ECCBEA42202D99D0045CE1D /* Assets.swift in Sources */,
 				4ECCBEA32202D99D0045CE1D /* LocalizableStrings.swift in Sources */,
+				4EE4579622094C6A0017B9BF /* ModalViewController.swift in Sources */,
 				4EBA46132204305C00AB71B1 /* Const.swift in Sources */,
 				4ECCBEA22202D99D0045CE1D /* StoryboardSegues.swift in Sources */,
 				4ECCBEA12202D99D0045CE1D /* StoryboardScenes.swift in Sources */,

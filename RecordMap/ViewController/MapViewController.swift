@@ -9,6 +9,8 @@
 import UIKit
 import MapKit
 
+import RxSwift
+import RxCocoa
 import CoreLocation
 import SnapKit
 import FloatingPanel
@@ -16,17 +18,19 @@ import FloatingPanel
 final class MapViewController: UIViewController {
 
     @IBOutlet weak private var mapView: MKMapView!
-    @IBOutlet weak private var latitudeValue: UILabel!
-    @IBOutlet weak private var longitudeValue: UILabel!
+    @IBOutlet weak private var dropPinButton: UIButton!
     
     lazy var floatingPanelController: FloatingPanelController = {preconditionFailure()}()
     lazy var locationManager: CLLocationManager = {preconditionFailure()}()
     lazy var promoteView: PromoteView = {preconditionFailure()}()
     
+    private let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setup()
+        bind()
     }
     
     func setup() {
@@ -65,7 +69,16 @@ final class MapViewController: UIViewController {
         floatingPanelController.addPanel(toParent: self, belowView: nil, animated: false)
     }
     
+    func bind() {
+        dropPinButton.rx.tap.asDriver()
+            .drive(onNext: { [unowned self] in
+                self.perform(segue: StoryboardSegue.Main.presentModal)
+            })
+            .disposed(by: disposeBag)
+    }
+    
     func setRegion(coordinate: CLLocationCoordinate2D) {
+        // ajust point to 'coordinate'
         let span = MKCoordinateSpan(
             latitudeDelta: Map.latitudeDelta,
             longitudeDelta: Map.longitudeDelta
@@ -91,11 +104,9 @@ extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         // called when user location is updated
         if let coordinate = locations.last?.coordinate {
-            latitudeValue.text = (round(coordinate.latitude) / 10).description
-            longitudeValue.text = (round(coordinate.longitude) / 10).description
             setRegion(coordinate: coordinate)
             
-            // remove pins & put a pin
+            // remove pins & drop a pin
             mapView.removeAnnotations(mapView.annotations)
             let annotation = MKPointAnnotation()
             annotation.coordinate = coordinate

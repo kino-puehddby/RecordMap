@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3rJ-U7-3bt">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Modal View Controller-->
+        <scene sceneID="NqE-dn-hQc">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" id="3rJ-U7-3bt" customClass="ModalViewController" customModule="RecordMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eLt-nv-0c0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eKA-lC-iOs">
+                                <rect key="frame" x="50" y="70" width="275" height="547"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Slf-O4-aH1">
+                                        <rect key="frame" x="225" y="20" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="t6k-KD-jGq"/>
+                                            <constraint firstAttribute="height" constant="30" id="vfM-aT-JrU"/>
+                                        </constraints>
+                                        <state key="normal" image="close"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Slf-O4-aH1" firstAttribute="top" secondItem="eKA-lC-iOs" secondAttribute="top" constant="20" id="IKx-Ra-wCY"/>
+                                    <constraint firstAttribute="trailing" secondItem="Slf-O4-aH1" secondAttribute="trailing" constant="20" id="qHd-fo-Eii"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Fi4-t2-ogA" firstAttribute="trailing" secondItem="eKA-lC-iOs" secondAttribute="trailing" constant="50" id="2ek-5F-8lT"/>
+                            <constraint firstItem="Fi4-t2-ogA" firstAttribute="bottom" secondItem="eKA-lC-iOs" secondAttribute="bottom" constant="50" id="2ry-wA-ClH"/>
+                            <constraint firstItem="eKA-lC-iOs" firstAttribute="top" secondItem="Fi4-t2-ogA" secondAttribute="top" constant="50" id="Kos-wF-p1b"/>
+                            <constraint firstItem="eKA-lC-iOs" firstAttribute="leading" secondItem="Fi4-t2-ogA" secondAttribute="leading" constant="50" id="txl-3B-gZd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Fi4-t2-ogA"/>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="Slf-O4-aH1" id="MsQ-Zt-IGg"/>
+                        <outlet property="modalView" destination="eKA-lC-iOs" id="lbC-uP-TL7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DkH-cu-w0f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="close" width="64" height="64"/>
+    </resources>
+</document>
