@@ -8,6 +8,10 @@ def install_pods
 
     # UI
     pod 'Reusable'
+
+    # Firebase
+    pod 'Firebase/Core'
+    pod 'Firebase/Firestore'
 end
 
 target 'RecordMap' do
