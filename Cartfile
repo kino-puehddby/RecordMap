@@ -6,3 +6,6 @@ github "SnapKit/SnapKit" ~> 4.0.1
 
 # UI
 github "scenee/FloatingPanel"
+
+# Realm
+github "realm/realm-cocoa"
