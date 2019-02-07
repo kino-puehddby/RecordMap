@@ -10,6 +10,8 @@
 		4E3453EE2208415F007DAC66 /* FloatingPanel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E3453ED2208415E007DAC66 /* FloatingPanel.framework */; };
 		4E3453F0220843B3007DAC66 /* SemiModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3453EF220843B3007DAC66 /* SemiModalViewController.swift */; };
 		4E3453F222084425007DAC66 /* SemiModal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E3453F122084425007DAC66 /* SemiModal.storyboard */; };
+		4E5C52FA220C2B9600FABADB /* SemiModalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5C52F8220C2B9600FABADB /* SemiModalTableViewCell.swift */; };
+		4E5C52FB220C2B9600FABADB /* ModalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E5C52F9220C2B9600FABADB /* ModalTableViewCell.xib */; };
 		4EBA460D22041BF800AB71B1 /* PromoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EBA460C22041BF800AB71B1 /* PromoteView.xib */; };
 		4EBA460F22041C1B00AB71B1 /* PromoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBA460E22041C1B00AB71B1 /* PromoteView.swift */; };
 		4EBA46132204305C00AB71B1 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBA46122204305C00AB71B1 /* Const.swift */; };
@@ -44,8 +46,10 @@
 		4E3453ED2208415E007DAC66 /* FloatingPanel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FloatingPanel.framework; path = Carthage/Build/iOS/FloatingPanel.framework; sourceTree = "<group>"; };
 		4E3453EF220843B3007DAC66 /* SemiModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalViewController.swift; sourceTree = "<group>"; };
 		4E3453F122084425007DAC66 /* SemiModal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SemiModal.storyboard; sourceTree = "<group>"; };
+		4E5C52F8220C2B9600FABADB /* SemiModalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalTableViewCell.swift; sourceTree = "<group>"; };
+		4E5C52F9220C2B9600FABADB /* ModalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModalTableViewCell.xib; sourceTree = "<group>"; };
 		4EBA460C22041BF800AB71B1 /* PromoteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromoteView.xib; sourceTree = "<group>"; };
-		4EBA460E22041C1B00AB71B1 /* PromoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PromoteView.swift; path = /Users/user/github/RecordMap/RecordMap/View/PromoteView.swift; sourceTree = "<absolute>"; };
+		4EBA460E22041C1B00AB71B1 /* PromoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PromoteView.swift; path = /Users/sugitahisaya/github/RecordMap/RecordMap/View/PromoteView.swift; sourceTree = "<absolute>"; };
 		4EBA46122204305C00AB71B1 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		4ECCBE892202D78F0045CE1D /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		4ECCBE9D2202D99D0045CE1D /* StoryboardScenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoryboardScenes.swift; path = RecordMap/Utils/Generated/StoryboardScenes.swift; sourceTree = SOURCE_ROOT; };
@@ -120,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				4EBA460E22041C1B00AB71B1 /* PromoteView.swift */,
+				4E5C52F8220C2B9600FABADB /* SemiModalTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -139,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				4EBA460C22041BF800AB71B1 /* PromoteView.xib */,
+				4E5C52F9220C2B9600FABADB /* ModalTableViewCell.xib */,
 			);
 			path = XIBs;
 			sourceTree = "<group>";
@@ -346,6 +352,7 @@
 				4EF5981A2202AEE700B84379 /* LaunchScreen.storyboard in Resources */,
 				4ECCBE8A2202D78F0045CE1D /* Localizable.strings in Resources */,
 				4EF598172202AEE700B84379 /* Assets.xcassets in Resources */,
+				4E5C52FB220C2B9600FABADB /* ModalTableViewCell.xib in Resources */,
 				4EF598152202AEE500B84379 /* Main.storyboard in Resources */,
 				4EE4579A220966480017B9BF /* Modal.storyboard in Resources */,
 				4EBA460D22041BF800AB71B1 /* PromoteView.xib in Resources */,
@@ -480,6 +487,7 @@
 				4ECCBEA42202D99D0045CE1D /* Assets.swift in Sources */,
 				4ECCBEA32202D99D0045CE1D /* LocalizableStrings.swift in Sources */,
 				4EE4579622094C6A0017B9BF /* ModalViewController.swift in Sources */,
+				4E5C52FA220C2B9600FABADB /* SemiModalTableViewCell.swift in Sources */,
 				4EBA46132204305C00AB71B1 /* Const.swift in Sources */,
 				A0101C67220B4160003FAF55 /* RealmExtension.swift in Sources */,
 				4ECCBEA22202D99D0045CE1D /* StoryboardSegues.swift in Sources */,

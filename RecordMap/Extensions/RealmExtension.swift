@@ -11,7 +11,7 @@ import RealmSwift
 
 extension Realm {
     // - add
-    public func addCustom(_ object: Object) {
+    public func customAdd(_ object: Object) {
         let realm = try! Realm()
         do {
             try realm.write {
@@ -19,6 +19,44 @@ extension Realm {
             }
         } catch {
             print("*** Realm Error: can't add object to realm ***")
+        }
+    }
+}
+
+protocol RealmUsable {
+    static var filePath: String { get }
+    static var config: Realm.Configuration { get }
+    static var schema: Realm.Configuration { get }
+    static func createRealm() -> Realm?
+    static  func addFileURL(config: Realm.Configuration) -> Realm.Configuration
+}
+
+extension RealmUsable {
+    static var config: Realm.Configuration {
+        var c = schema
+        c.fileURL = c.fileURL?
+            .deletingLastPathComponent()
+            .appendingPathComponent(filePath)
+            .appendingPathExtension("realm")
+        return c
+    }
+    
+    static var schema: Realm.Configuration {
+        return Realm.Configuration(
+            schemaVersion: 1,
+            migrationBlock: { _, oldSchemmaVersion in
+                if oldSchemmaVersion < 1 { }
+        })
+    }
+    
+    static func createRealm() -> Realm? {
+        do {
+            return try Realm(configuration: config)
+        } catch {
+            assertionFailure("realm error: \(error)")
+            var config = self.config
+            config.deleteRealmIfMigrationNeeded = true
+            return try? Realm(configuration: config)
         }
     }
 }

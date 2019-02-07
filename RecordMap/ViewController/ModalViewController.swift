@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 import RxSwift
 import RxCocoa
@@ -19,10 +20,13 @@ final class ModalViewController: UIViewController {
     @IBOutlet weak private var textField: UITextField!
     @IBOutlet weak private var desideButton: UIButton!
     
+    private let realm = try! Realm()
+    
+    // - Rx
     private let disposeBag = DisposeBag()
     private let textInput = BehaviorRelay<String>(value: "")
-    
-    let realm = try! Realm()
+    let latitude = BehaviorRelay<Double>(value: 0)
+    let longitude = BehaviorRelay<Double>(value: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,12 +54,32 @@ final class ModalViewController: UIViewController {
             .drive(onNext: { [unowned self] in
                 let locationData = LocationData()
                 locationData.name = self.textInput.value
-                locationData.location.latitude = 0 // FIXME: データ引き継ぎ
-                locationData.location.longitude = 0 // FIXME データ引き継ぎ
-                self.realm.addCustom(locationData)
+                locationData.address = self.createAddress(
+                    latitude: self.latitude.value,
+                    longitude: self.longitude.value
+                )
+                locationData.location?.latitude = self.latitude.value
+                locationData.location?.longitude = self.longitude.value
+                self.realm.customAdd(locationData)
                 self.dismiss(animated: true)
             })
             .disposed(by: disposeBag)
+    }
+    
+    func createAddress(latitude: Double, longitude: Double) -> String {
+        let location = CLLocation(latitude: latitude, longitude: longitude)
+        let output: String = {
+            var address = ""
+            CLGeocoder().reverseGeocodeLocation(location) { placemarks, error in
+                guard error == nil,
+                    let placemark = placemarks?.last else { return }
+                address += placemark.country ?? ""
+                address += placemark.administrativeArea ?? ""
+                address += placemark.locality ?? ""
+            }
+            return address
+        }()
+        return output
     }
 }
 

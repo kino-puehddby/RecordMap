@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Semi Modal View Controller-->
+        <!--お気に入りスポット-->
         <scene sceneID="fFF-zU-0et">
             <objects>
                 <viewController id="SVX-bO-iXy" customClass="SemiModalViewController" customModule="RecordMap" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,20 +18,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SemiModal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8PP-wv-a98">
-                                <rect key="frame" x="144.5" y="323" width="86" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nb2-u6-8Yl">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="SVX-bO-iXy" id="TP9-Cu-kea"/>
+                                    <outlet property="delegate" destination="SVX-bO-iXy" id="9QE-07-dgo"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="8PP-wv-a98" firstAttribute="centerX" secondItem="b6p-hQ-zBm" secondAttribute="centerX" id="bwd-vw-om4"/>
-                            <constraint firstItem="8PP-wv-a98" firstAttribute="centerY" secondItem="b6p-hQ-zBm" secondAttribute="centerY" id="ecc-tj-unm"/>
+                            <constraint firstItem="m2l-8W-b3G" firstAttribute="trailing" secondItem="Nb2-u6-8Yl" secondAttribute="trailing" id="HYW-h0-rsj"/>
+                            <constraint firstItem="Nb2-u6-8Yl" firstAttribute="leading" secondItem="m2l-8W-b3G" secondAttribute="leading" id="UB6-lg-Qto"/>
+                            <constraint firstItem="m2l-8W-b3G" firstAttribute="bottom" secondItem="Nb2-u6-8Yl" secondAttribute="bottom" id="UEl-LG-gUx"/>
+                            <constraint firstItem="Nb2-u6-8Yl" firstAttribute="top" secondItem="m2l-8W-b3G" secondAttribute="top" id="mPn-rn-Q9l"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="m2l-8W-b3G"/>
                     </view>
+                    <navigationItem key="navigationItem" title="お気に入りスポット" id="3fq-5u-m9u"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="Nb2-u6-8Yl" id="3ya-v1-FEq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bXO-fW-kTf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

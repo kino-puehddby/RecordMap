@@ -9,12 +9,13 @@
 import Foundation
 import RealmSwift
 
-class LocationData: Object {
-    @objc dynamic var name = ""
-    @objc dynamic var location = Location()
+final class LocationData: Object {
+    @objc dynamic var name: String?
+    @objc dynamic var address: String?
+    @objc dynamic var location: Location? // リレーションオブジェクトははOptionalにしないとcrashしてしまう
 }
 
-class Location: Object {
-    @objc dynamic var latitude = 0
-    @objc dynamic var longitude = 0
+final class Location: Object {
+    @objc dynamic var latitude: Double = 0.0
+    @objc dynamic var longitude: Double = 0.0
 }

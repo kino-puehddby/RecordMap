@@ -8,21 +8,26 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 import RxSwift
 import RxCocoa
-import CoreLocation
 import SnapKit
 import FloatingPanel
+import RealmSwift
 
 final class MapViewController: UIViewController {
 
     @IBOutlet weak private var mapView: MKMapView!
     @IBOutlet weak private var dropPinButton: UIButton!
     
-    lazy var floatingPanelController: FloatingPanelController = {preconditionFailure()}()
-    lazy var locationManager: CLLocationManager = {preconditionFailure()}()
-    lazy var promoteView: PromoteView = {preconditionFailure()}()
+    private lazy var floatingPanelController: FloatingPanelController = {preconditionFailure()}()
+    private lazy var locationManager: CLLocationManager = {preconditionFailure()}()
+    private lazy var promoteView: PromoteView = {preconditionFailure()}()
+    
+    private var realm: Realm!
+    private var latitude: Double = 0.0
+    private var longitude: Double = 0.0
     
     private let disposeBag = DisposeBag()
     
@@ -33,7 +38,41 @@ final class MapViewController: UIViewController {
         bind()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let favoriteList = Array(realm.objects(LocationData.self))
+        favoriteList.forEach { data in
+            if let location = data.location,
+                let name = data.name,
+                let address = data.address {
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+                annotation.title = name
+                annotation.subtitle = address
+                mapView.addAnnotation(annotation)
+            }
+        }
+        print(favoriteList)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case StoryboardSegue.Main.presentModal.rawValue:
+            let vc = segue.destination as! ModalViewController
+            vc.latitude.accept(latitude)
+            vc.longitude.accept(longitude)
+        default:
+            break
+        }
+    }
+    
     func setup() {
+        // - Realm
+        var config = Realm.Configuration()
+        config.deleteRealmIfMigrationNeeded = true
+        realm = try! Realm(configuration: config)
+        
         // - Location Manager
         locationManager = CLLocationManager()
         locationManager.delegate = self
@@ -117,6 +156,10 @@ extension MapViewController: CLLocationManagerDelegate {
             // draw circle
             let circle = MKCircle(center: coordinate, radius: Map.circleRadius)
             mapView.addOverlay(circle)
+            
+            // reflect stored proparties
+            latitude = coordinate.latitude
+            longitude = coordinate.longitude
         }
     }
 }
