@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Modal View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="NqE-dn-hQc">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" id="3rJ-U7-3bt" customClass="ModalViewController" customModule="RecordMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="3rJ-U7-3bt" customClass="RegisterViewController" customModule="RecordMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eLt-nv-0c0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

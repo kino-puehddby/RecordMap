@@ -24,3 +24,9 @@ public struct Map {
         public static let width = UIScreen.main.bounds.width - sideSpace * 2
     }
 }
+
+public struct SemiModal {
+    public struct TableView {
+        public static let heightForRow: CGFloat = 55
+    }
+}

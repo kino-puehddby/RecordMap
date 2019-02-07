@@ -11,7 +11,7 @@
 		4E3453F0220843B3007DAC66 /* SemiModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3453EF220843B3007DAC66 /* SemiModalViewController.swift */; };
 		4E3453F222084425007DAC66 /* SemiModal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E3453F122084425007DAC66 /* SemiModal.storyboard */; };
 		4E5C52FA220C2B9600FABADB /* SemiModalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5C52F8220C2B9600FABADB /* SemiModalTableViewCell.swift */; };
-		4E5C52FB220C2B9600FABADB /* ModalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E5C52F9220C2B9600FABADB /* ModalTableViewCell.xib */; };
+		4E5C52FB220C2B9600FABADB /* SemiModalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E5C52F9220C2B9600FABADB /* SemiModalTableViewCell.xib */; };
 		4EBA460D22041BF800AB71B1 /* PromoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EBA460C22041BF800AB71B1 /* PromoteView.xib */; };
 		4EBA460F22041C1B00AB71B1 /* PromoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBA460E22041C1B00AB71B1 /* PromoteView.swift */; };
 		4EBA46132204305C00AB71B1 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBA46122204305C00AB71B1 /* Const.swift */; };
@@ -26,7 +26,7 @@
 		4ECCBEAD2202DB0D0045CE1D /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECCBEAC2202DB0D0045CE1D /* RxBlocking.framework */; };
 		4ECCBEAF2202DB4F0045CE1D /* RxAtomic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECCBEAE2202DB4E0045CE1D /* RxAtomic.framework */; };
 		4ECCBEB22202FF2F0045CE1D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECCBEB12202FF2F0045CE1D /* CoreLocation.framework */; };
-		4EE4579622094C6A0017B9BF /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE4579522094C6A0017B9BF /* ModalViewController.swift */; };
+		4EE4579622094C6A0017B9BF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE4579522094C6A0017B9BF /* RegisterViewController.swift */; };
 		4EE4579A220966480017B9BF /* Modal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EE45799220966480017B9BF /* Modal.storyboard */; };
 		4EE4579E220973040017B9BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4EE4579D220973040017B9BF /* GoogleService-Info.plist */; };
 		4EF598102202AEE500B84379 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5980F2202AEE500B84379 /* AppDelegate.swift */; };
@@ -47,9 +47,9 @@
 		4E3453EF220843B3007DAC66 /* SemiModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalViewController.swift; sourceTree = "<group>"; };
 		4E3453F122084425007DAC66 /* SemiModal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SemiModal.storyboard; sourceTree = "<group>"; };
 		4E5C52F8220C2B9600FABADB /* SemiModalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalTableViewCell.swift; sourceTree = "<group>"; };
-		4E5C52F9220C2B9600FABADB /* ModalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModalTableViewCell.xib; sourceTree = "<group>"; };
+		4E5C52F9220C2B9600FABADB /* SemiModalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SemiModalTableViewCell.xib; sourceTree = "<group>"; };
 		4EBA460C22041BF800AB71B1 /* PromoteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromoteView.xib; sourceTree = "<group>"; };
-		4EBA460E22041C1B00AB71B1 /* PromoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PromoteView.swift; path = /Users/sugitahisaya/github/RecordMap/RecordMap/View/PromoteView.swift; sourceTree = "<absolute>"; };
+		4EBA460E22041C1B00AB71B1 /* PromoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PromoteView.swift; path = /Users/user/github/RecordMap/RecordMap/View/PromoteView.swift; sourceTree = "<absolute>"; };
 		4EBA46122204305C00AB71B1 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		4ECCBE892202D78F0045CE1D /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		4ECCBE9D2202D99D0045CE1D /* StoryboardScenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoryboardScenes.swift; path = RecordMap/Utils/Generated/StoryboardScenes.swift; sourceTree = SOURCE_ROOT; };
@@ -62,7 +62,7 @@
 		4ECCBEAC2202DB0D0045CE1D /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		4ECCBEAE2202DB4E0045CE1D /* RxAtomic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxAtomic.framework; path = Carthage/Build/iOS/RxAtomic.framework; sourceTree = "<group>"; };
 		4ECCBEB12202FF2F0045CE1D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		4EE4579522094C6A0017B9BF /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		4EE4579522094C6A0017B9BF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		4EE45799220966480017B9BF /* Modal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Modal.storyboard; sourceTree = "<group>"; };
 		4EE4579D220973040017B9BF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4EF5980C2202AEE500B84379 /* RecordMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecordMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,7 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				4EBA460C22041BF800AB71B1 /* PromoteView.xib */,
-				4E5C52F9220C2B9600FABADB /* ModalTableViewCell.xib */,
+				4E5C52F9220C2B9600FABADB /* SemiModalTableViewCell.xib */,
 			);
 			path = XIBs;
 			sourceTree = "<group>";
@@ -202,7 +202,7 @@
 				4EF5980F2202AEE500B84379 /* AppDelegate.swift */,
 				4EF598112202AEE500B84379 /* MapViewController.swift */,
 				4E3453EF220843B3007DAC66 /* SemiModalViewController.swift */,
-				4EE4579522094C6A0017B9BF /* ModalViewController.swift */,
+				4EE4579522094C6A0017B9BF /* RegisterViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -242,8 +242,8 @@
 				4EBA460B22041BDB00AB71B1 /* View */,
 				A0101C62220B3472003FAF55 /* Model */,
 				A0101C65220B4134003FAF55 /* Extensions */,
-				4ECCBE872202D75A0045CE1D /* Resources */,
 				4ECCBE8B2202D8170045CE1D /* Units */,
+				4ECCBE872202D75A0045CE1D /* Resources */,
 				4EE4579F220973150017B9BF /* SupportingFiles */,
 			);
 			path = RecordMap;
@@ -352,7 +352,7 @@
 				4EF5981A2202AEE700B84379 /* LaunchScreen.storyboard in Resources */,
 				4ECCBE8A2202D78F0045CE1D /* Localizable.strings in Resources */,
 				4EF598172202AEE700B84379 /* Assets.xcassets in Resources */,
-				4E5C52FB220C2B9600FABADB /* ModalTableViewCell.xib in Resources */,
+				4E5C52FB220C2B9600FABADB /* SemiModalTableViewCell.xib in Resources */,
 				4EF598152202AEE500B84379 /* Main.storyboard in Resources */,
 				4EE4579A220966480017B9BF /* Modal.storyboard in Resources */,
 				4EBA460D22041BF800AB71B1 /* PromoteView.xib in Resources */,
@@ -486,7 +486,7 @@
 				4EBA460F22041C1B00AB71B1 /* PromoteView.swift in Sources */,
 				4ECCBEA42202D99D0045CE1D /* Assets.swift in Sources */,
 				4ECCBEA32202D99D0045CE1D /* LocalizableStrings.swift in Sources */,
-				4EE4579622094C6A0017B9BF /* ModalViewController.swift in Sources */,
+				4EE4579622094C6A0017B9BF /* RegisterViewController.swift in Sources */,
 				4E5C52FA220C2B9600FABADB /* SemiModalTableViewCell.swift in Sources */,
 				4EBA46132204305C00AB71B1 /* Const.swift in Sources */,
 				A0101C67220B4160003FAF55 /* RealmExtension.swift in Sources */,

@@ -25,9 +25,10 @@ final class MapViewController: UIViewController {
     private lazy var locationManager: CLLocationManager = {preconditionFailure()}()
     private lazy var promoteView: PromoteView = {preconditionFailure()}()
     
-    private var realm: Realm!
+    private var realm = try! Realm()
     private var latitude: Double = 0.0
     private var longitude: Double = 0.0
+    private var address: String = ""
     
     private let disposeBag = DisposeBag()
     
@@ -59,9 +60,10 @@ final class MapViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case StoryboardSegue.Main.presentModal.rawValue:
-            let vc = segue.destination as! ModalViewController
+            let vc = segue.destination as! RegisterViewController
             vc.latitude.accept(latitude)
             vc.longitude.accept(longitude)
+            updateAddress(to: vc, latitude: latitude, longitude: longitude)
         default:
             break
         }
@@ -69,9 +71,9 @@ final class MapViewController: UIViewController {
     
     func setup() {
         // - Realm
-        var config = Realm.Configuration()
-        config.deleteRealmIfMigrationNeeded = true
-        realm = try! Realm(configuration: config)
+//        var config = Realm.Configuration()
+//        config.deleteRealmIfMigrationNeeded = false
+//        realm = try! Realm(configuration: config)
         
         // - Location Manager
         locationManager = CLLocationManager()
@@ -105,6 +107,7 @@ final class MapViewController: UIViewController {
         floatingPanelController.delegate = self
         let semiModalVC = StoryboardScene.SemiModal.initialScene.instantiate()
         floatingPanelController.set(contentViewController: semiModalVC)
+        floatingPanelController.track(scrollView: semiModalVC.table)
         floatingPanelController.addPanel(toParent: self, belowView: nil, animated: false)
     }
     
@@ -124,6 +127,20 @@ final class MapViewController: UIViewController {
         )
         let region = MKCoordinateRegion(center: coordinate, span: span)
         mapView.setRegion(region, animated: true)
+    }
+    
+    func updateAddress(to vc: RegisterViewController, latitude: Double, longitude: Double) {
+        let location = CLLocation(latitude: latitude, longitude: longitude)
+        CLGeocoder().reverseGeocodeLocation(location) { placemarks, _ in
+            guard let placemark = placemarks?.first else { return }
+            var address: String = ""
+            address += placemark.country ?? ""
+            address += placemark.administrativeArea ?? ""
+            address += placemark.locality ?? ""
+            address += placemark.thoroughfare ?? ""
+            address += placemark.subThoroughfare ?? ""
+            vc.address.accept(address)
+        }
     }
 }
 

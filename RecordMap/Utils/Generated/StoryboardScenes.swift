@@ -25,7 +25,7 @@ internal enum StoryboardScene {
   internal enum Modal: StoryboardType {
     internal static let storyboardName = "Modal"
 
-    internal static let initialScene = InitialSceneType<RecordMap.ModalViewController>(storyboard: Modal.self)
+    internal static let initialScene = InitialSceneType<RecordMap.RegisterViewController>(storyboard: Modal.self)
   }
   internal enum SemiModal: StoryboardType {
     internal static let storyboardName = "SemiModal"
