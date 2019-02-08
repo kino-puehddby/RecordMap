@@ -20,7 +20,7 @@ final class SemiModalTableViewCell: UITableViewCell, NibReusable {
         super.awakeFromNib()
     }
     
-    func configuration(data: LocationData) {
+    func configuration(data: LocationModel) {
         nameLabel.text = data.name
         addressLabel.text = data.address
     }

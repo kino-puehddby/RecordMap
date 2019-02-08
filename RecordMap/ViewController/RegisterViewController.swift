@@ -22,6 +22,8 @@ final class RegisterViewController: UIViewController {
     
     private let realm = try! Realm()
     
+    var postDismissionAction: (() -> Void)?
+    
     // - Rx
     private let disposeBag = DisposeBag()
     private let textInput = BehaviorRelay<String>(value: "")
@@ -55,13 +57,16 @@ final class RegisterViewController: UIViewController {
             .drive(onNext: { [unowned self] in
                 print("latitude = \(self.latitude.value)")
                 print("longitude = \(self.longitude.value)")
-                let locationData = LocationData()
-                locationData.name = self.textInput.value
-                locationData.address = self.address.value
-                locationData.location?.latitude = self.latitude.value
-                locationData.location?.longitude = self.longitude.value
+                let locationData = LocationModel(
+                    name: self.textInput.value,
+                    address: self.address.value,
+                    latitude: self.latitude.value,
+                    longitude: self.longitude.value
+                )
                 self.realm.customAdd(locationData)
-                self.dismiss(animated: true)
+                self.dismiss(animated: true, completion: { [unowned self] in
+                    self.postDismissionAction?() // call back
+                })
             })
             .disposed(by: disposeBag)
     }

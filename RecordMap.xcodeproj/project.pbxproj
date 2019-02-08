@@ -12,6 +12,8 @@
 		4E3453F222084425007DAC66 /* SemiModal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E3453F122084425007DAC66 /* SemiModal.storyboard */; };
 		4E5C52FA220C2B9600FABADB /* SemiModalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5C52F8220C2B9600FABADB /* SemiModalTableViewCell.swift */; };
 		4E5C52FB220C2B9600FABADB /* SemiModalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E5C52F9220C2B9600FABADB /* SemiModalTableViewCell.xib */; };
+		4E5C52FD220D21D700FABADB /* RealmMigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5C52FC220D21D700FABADB /* RealmMigrator.swift */; };
+		4E5C52FF220D225800FABADB /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5C52FE220D225800FABADB /* RealmModel.swift */; };
 		4EBA460D22041BF800AB71B1 /* PromoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EBA460C22041BF800AB71B1 /* PromoteView.xib */; };
 		4EBA460F22041C1B00AB71B1 /* PromoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBA460E22041C1B00AB71B1 /* PromoteView.swift */; };
 		4EBA46132204305C00AB71B1 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBA46122204305C00AB71B1 /* Const.swift */; };
@@ -35,7 +37,7 @@
 		4EF598172202AEE700B84379 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EF598162202AEE700B84379 /* Assets.xcassets */; };
 		4EF5981A2202AEE700B84379 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EF598182202AEE700B84379 /* LaunchScreen.storyboard */; };
 		69C4786813AC9AE25A5F291E /* Pods_RecordMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5725DAE8C820FEE1556625DF /* Pods_RecordMap.framework */; };
-		A0101C64220B348B003FAF55 /* RealmObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0101C63220B348B003FAF55 /* RealmObjects.swift */; };
+		A0101C64220B348B003FAF55 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0101C63220B348B003FAF55 /* LocationModel.swift */; };
 		A0101C67220B4160003FAF55 /* RealmExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0101C66220B4160003FAF55 /* RealmExtension.swift */; };
 		A0D1DDD6220B2A1100217344 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D1DDD4220B2A1100217344 /* RealmSwift.framework */; };
 		A0D1DDD7220B2A1100217344 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D1DDD5220B2A1100217344 /* Realm.framework */; };
@@ -48,8 +50,10 @@
 		4E3453F122084425007DAC66 /* SemiModal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SemiModal.storyboard; sourceTree = "<group>"; };
 		4E5C52F8220C2B9600FABADB /* SemiModalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiModalTableViewCell.swift; sourceTree = "<group>"; };
 		4E5C52F9220C2B9600FABADB /* SemiModalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SemiModalTableViewCell.xib; sourceTree = "<group>"; };
+		4E5C52FC220D21D700FABADB /* RealmMigrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMigrator.swift; sourceTree = "<group>"; };
+		4E5C52FE220D225800FABADB /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		4EBA460C22041BF800AB71B1 /* PromoteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromoteView.xib; sourceTree = "<group>"; };
-		4EBA460E22041C1B00AB71B1 /* PromoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PromoteView.swift; path = /Users/user/github/RecordMap/RecordMap/View/PromoteView.swift; sourceTree = "<absolute>"; };
+		4EBA460E22041C1B00AB71B1 /* PromoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PromoteView.swift; path = /Users/sugitahisaya/github/RecordMap/RecordMap/View/PromoteView.swift; sourceTree = "<absolute>"; };
 		4EBA46122204305C00AB71B1 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		4ECCBE892202D78F0045CE1D /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		4ECCBE9D2202D99D0045CE1D /* StoryboardScenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoryboardScenes.swift; path = RecordMap/Utils/Generated/StoryboardScenes.swift; sourceTree = SOURCE_ROOT; };
@@ -74,7 +78,7 @@
 		4EF5981B2202AEE700B84379 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5725DAE8C820FEE1556625DF /* Pods_RecordMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecordMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E0C960EE10EFB43F93BE94F /* Pods-RecordMapUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecordMapUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RecordMapUITests/Pods-RecordMapUITests.release.xcconfig"; sourceTree = "<group>"; };
-		A0101C63220B348B003FAF55 /* RealmObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmObjects.swift; sourceTree = "<group>"; };
+		A0101C63220B348B003FAF55 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		A0101C66220B4160003FAF55 /* RealmExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmExtension.swift; sourceTree = "<group>"; };
 		A0D1DDD4220B2A1100217344 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		A0D1DDD5220B2A1100217344 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
@@ -180,6 +184,7 @@
 			children = (
 				4ECCBE8C2202D8230045CE1D /* Generated */,
 				4EBA46122204305C00AB71B1 /* Const.swift */,
+				4E5C52FC220D21D700FABADB /* RealmMigrator.swift */,
 			);
 			name = Units;
 			path = Utils;
@@ -252,7 +257,8 @@
 		A0101C62220B3472003FAF55 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A0101C63220B348B003FAF55 /* RealmObjects.swift */,
+				4E5C52FE220D225800FABADB /* RealmModel.swift */,
+				A0101C63220B348B003FAF55 /* LocationModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -480,7 +486,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E3453F0220843B3007DAC66 /* SemiModalViewController.swift in Sources */,
-				A0101C64220B348B003FAF55 /* RealmObjects.swift in Sources */,
+				A0101C64220B348B003FAF55 /* LocationModel.swift in Sources */,
+				4E5C52FD220D21D700FABADB /* RealmMigrator.swift in Sources */,
 				4EF598122202AEE500B84379 /* MapViewController.swift in Sources */,
 				4EF598102202AEE500B84379 /* AppDelegate.swift in Sources */,
 				4EBA460F22041C1B00AB71B1 /* PromoteView.swift in Sources */,
@@ -491,6 +498,7 @@
 				4EBA46132204305C00AB71B1 /* Const.swift in Sources */,
 				A0101C67220B4160003FAF55 /* RealmExtension.swift in Sources */,
 				4ECCBEA22202D99D0045CE1D /* StoryboardSegues.swift in Sources */,
+				4E5C52FF220D225800FABADB /* RealmModel.swift in Sources */,
 				4ECCBEA12202D99D0045CE1D /* StoryboardScenes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

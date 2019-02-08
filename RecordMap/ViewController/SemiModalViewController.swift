@@ -16,10 +16,9 @@ final class SemiModalViewController: UIViewController {
 
     @IBOutlet weak private var tableView: UITableView!
     
-    private let realm = try! Realm()
-    
     private let disposeBag = DisposeBag()
-    var favoriteList: [LocationData]?
+    var favoriteList = BehaviorRelay<Results<LocationModel>>(value: LocationModel.read())
+    var refreshTrigger = PublishSubject<Void>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,14 +27,20 @@ final class SemiModalViewController: UIViewController {
     }
     
     func setup() {
-        favoriteList = Array(realm.objects(LocationData.self))
         tableView.register(cellType: SemiModalTableViewCell.self)
         
-        tableView.rx.itemDeleted
-            .subscribe(onNext: { [unowned self] indexPath in
-                self.favoriteList?.remove(at: indexPath.row)
+        refreshTrigger.asObservable()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [unowned self] in
+                self.updateTableView()
             })
             .disposed(by: disposeBag)
+    }
+    
+    func updateTableView() {
+        let list = LocationModel.read()
+        favoriteList.accept(list)
+        tableView.reloadData()
     }
 }
 
@@ -47,11 +52,7 @@ extension SemiModalViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
         case .delete:
-            guard var list = favoriteList else { return }
-            try! realm.write {
-                realm.delete(list[indexPath.row])
-            }
-            list.remove(at: indexPath.row)
+            LocationModel.delete()
             tableView.deleteRows(at: [indexPath], with: .fade)
         default:
             break
@@ -65,12 +66,12 @@ extension SemiModalViewController: UITableViewDelegate {
 
 extension SemiModalViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return favoriteList?.count ?? 0
+        return favoriteList.value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath) as SemiModalTableViewCell
-        cell.configuration(data: favoriteList?[indexPath.row] ?? LocationData())
+        cell.configuration(data: favoriteList.value[indexPath.row])
         return cell
     }
 }

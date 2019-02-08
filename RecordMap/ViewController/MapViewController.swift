@@ -24,13 +24,15 @@ final class MapViewController: UIViewController {
     private lazy var floatingPanelController: FloatingPanelController = {preconditionFailure()}()
     private lazy var locationManager: CLLocationManager = {preconditionFailure()}()
     private lazy var promoteView: PromoteView = {preconditionFailure()}()
+    private var semiModalVC: SemiModalViewController!
     
-    private var realm = try! Realm()
     private var latitude: Double = 0.0
     private var longitude: Double = 0.0
     private var address: String = ""
     
     private let disposeBag = DisposeBag()
+    
+    let trigger = PublishSubject<Void>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,17 +44,13 @@ final class MapViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let favoriteList = Array(realm.objects(LocationData.self))
+        let favoriteList = LocationModel.read()
         favoriteList.forEach { data in
-            if let location = data.location,
-                let name = data.name,
-                let address = data.address {
-                let annotation = MKPointAnnotation()
-                annotation.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
-                annotation.title = name
-                annotation.subtitle = address
-                mapView.addAnnotation(annotation)
-            }
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = CLLocationCoordinate2D(latitude: data.latitude, longitude: data.longitude)
+            annotation.title = data.name
+            annotation.subtitle = data.address
+            mapView.addAnnotation(annotation)
         }
         print(favoriteList)
     }
@@ -63,6 +61,7 @@ final class MapViewController: UIViewController {
             let vc = segue.destination as! RegisterViewController
             vc.latitude.accept(latitude)
             vc.longitude.accept(longitude)
+            vc.postDismissionAction = { self.trigger.onNext(()) }
             updateAddress(to: vc, latitude: latitude, longitude: longitude)
         default:
             break
@@ -70,11 +69,6 @@ final class MapViewController: UIViewController {
     }
     
     func setup() {
-        // - Realm
-//        var config = Realm.Configuration()
-//        config.deleteRealmIfMigrationNeeded = false
-//        realm = try! Realm(configuration: config)
-        
         // - Location Manager
         locationManager = CLLocationManager()
         locationManager.delegate = self
@@ -105,7 +99,7 @@ final class MapViewController: UIViewController {
         floatingPanelController.surfaceView.layer.masksToBounds = true
         floatingPanelController.surfaceView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         floatingPanelController.delegate = self
-        let semiModalVC = StoryboardScene.SemiModal.initialScene.instantiate()
+        semiModalVC = StoryboardScene.SemiModal.initialScene.instantiate()
         floatingPanelController.set(contentViewController: semiModalVC)
         floatingPanelController.track(scrollView: semiModalVC.table)
         floatingPanelController.addPanel(toParent: self, belowView: nil, animated: false)
@@ -116,6 +110,10 @@ final class MapViewController: UIViewController {
             .drive(onNext: { [unowned self] in
                 self.perform(segue: StoryboardSegue.Main.presentModal)
             })
+            .disposed(by: disposeBag)
+        
+        trigger.asObservable()
+            .bind(to: semiModalVC.refreshTrigger)
             .disposed(by: disposeBag)
     }
     
