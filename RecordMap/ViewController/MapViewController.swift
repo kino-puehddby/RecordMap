@@ -39,6 +39,7 @@ final class MapViewController: UIViewController {
         super.viewDidLoad()
         
         // FIXME: スプラッシュをもっとかっこよくしたい
+        // FIXME: 右上のコンパスの位置を変更したい
         
         print(segmentedControl.layer.cornerRadius)
         
