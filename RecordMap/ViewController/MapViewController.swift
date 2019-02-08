@@ -133,6 +133,7 @@ final class MapViewController: UIViewController {
                 let coordinate = CLLocationCoordinate2D(latitude: list[selected].latitude, longitude: list[selected].longitude)
                 self.setRegion(coordinate: coordinate)
                 self.floatingPanelController.move(to: .tip, animated: true)
+                self.semiModalVC.table.deselectRow(at: [0, selected], animated: true)
             })
             .disposed(by: disposeBag)
     }
