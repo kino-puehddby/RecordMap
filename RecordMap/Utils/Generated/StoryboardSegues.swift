@@ -13,7 +13,7 @@ import UIKit
 // swiftlint:disable explicit_type_interface identifier_name line_length type_body_length type_name
 internal enum StoryboardSegue {
   internal enum Main: String, SegueType {
-    case presentModal
+    case modalRegister
   }
 }
 // swiftlint:enable explicit_type_interface identifier_name line_length type_body_length type_name

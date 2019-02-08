@@ -19,21 +19,30 @@ final class SemiModalViewController: UIViewController {
     private let disposeBag = DisposeBag()
     var favoriteList = BehaviorRelay<Results<LocationModel>>(value: LocationModel.read())
     var refreshTrigger = PublishSubject<Void>()
+    var selected = PublishSubject<Int>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setup()
+        bind()
     }
     
     func setup() {
         tableView.register(cellType: SemiModalTableViewCell.self)
-        
+    }
+    
+    func bind() {
         refreshTrigger.asObservable()
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [unowned self] in
                 self.updateTableView()
             })
+            .disposed(by: disposeBag)
+        
+        tableView.rx.itemSelected
+            .map { $0.row }
+            .bind(to: selected)
             .disposed(by: disposeBag)
     }
     

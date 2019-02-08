@@ -26,7 +26,7 @@
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egp-2Q-UHb">
                                 <rect key="frame" x="305" y="40" width="50" height="50"/>
-                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="C47-bX-vCf"/>
                                     <constraint firstAttribute="width" constant="50" id="MYH-tF-BGz"/>
@@ -54,17 +54,17 @@
                     <connections>
                         <outlet property="dropPinButton" destination="egp-2Q-UHb" id="m3k-DM-Hak"/>
                         <outlet property="mapView" destination="Mt9-BA-3kj" id="FKb-Ct-Q5Y"/>
-                        <segue destination="7zV-yV-JZd" kind="presentation" identifier="presentModal" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="hYg-FF-bgs"/>
+                        <segue destination="7zV-yV-JZd" kind="presentation" identifier="modalRegister" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="hYg-FF-bgs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="77.599999999999994" y="26.53673163418291"/>
         </scene>
-        <!--Modal-->
+        <!--Register-->
         <scene sceneID="iTp-2Y-rwm">
             <objects>
-                <viewControllerPlaceholder storyboardName="Modal" id="7zV-yV-JZd" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Register" id="7zV-yV-JZd" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7JX-R7-pRD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="652" y="26"/>

@@ -22,10 +22,10 @@ internal enum StoryboardScene {
 
     internal static let initialScene = InitialSceneType<RecordMap.MapViewController>(storyboard: Main.self)
   }
-  internal enum Modal: StoryboardType {
-    internal static let storyboardName = "Modal"
+  internal enum Register: StoryboardType {
+    internal static let storyboardName = "Register"
 
-    internal static let initialScene = InitialSceneType<RecordMap.RegisterViewController>(storyboard: Modal.self)
+    internal static let initialScene = InitialSceneType<RecordMap.RegisterViewController>(storyboard: Register.self)
   }
   internal enum SemiModal: StoryboardType {
     internal static let storyboardName = "SemiModal"

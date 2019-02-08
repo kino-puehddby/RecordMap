@@ -24,14 +24,14 @@ final class MapViewController: UIViewController {
     private lazy var floatingPanelController: FloatingPanelController = {preconditionFailure()}()
     private lazy var locationManager: CLLocationManager = {preconditionFailure()}()
     private lazy var promoteView: PromoteView = {preconditionFailure()}()
-    private var semiModalVC: SemiModalViewController!
+    private lazy var semiModalVC: SemiModalViewController = {preconditionFailure()}()
     
     private var latitude: Double = 0.0
     private var longitude: Double = 0.0
     private var address: String = ""
+    private var favoriteList: Results<LocationModel>?
     
     private let disposeBag = DisposeBag()
-    
     let trigger = PublishSubject<Void>()
     
     override func viewDidLoad() {
@@ -44,7 +44,9 @@ final class MapViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let favoriteList = LocationModel.read()
+        // put pins to mapView
+        favoriteList = LocationModel.read()
+        guard let favoriteList = favoriteList else { return }
         favoriteList.forEach { data in
             let annotation = MKPointAnnotation()
             annotation.coordinate = CLLocationCoordinate2D(latitude: data.latitude, longitude: data.longitude)
@@ -52,12 +54,18 @@ final class MapViewController: UIViewController {
             annotation.subtitle = data.address
             mapView.addAnnotation(annotation)
         }
-        print(favoriteList)
+        debugPrint(favoriteList)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        floatingPanelController.removePanelFromParent(animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
-        case StoryboardSegue.Main.presentModal.rawValue:
+        case StoryboardSegue.Main.modalRegister.rawValue:
             let vc = segue.destination as! RegisterViewController
             vc.latitude.accept(latitude)
             vc.longitude.accept(longitude)
@@ -67,6 +75,10 @@ final class MapViewController: UIViewController {
             break
         }
     }
+    
+    // -----------------------
+    // - Private Functions
+    // -----------------------
     
     func setup() {
         // - Location Manager
@@ -82,7 +94,6 @@ final class MapViewController: UIViewController {
         // - Map View
         mapView.setCenter(mapView.userLocation.coordinate, animated: true)
         mapView.userTrackingMode = .followWithHeading
-        
         setRegion(coordinate: mapView.userLocation.coordinate)
         
         // - Promote View
@@ -108,17 +119,26 @@ final class MapViewController: UIViewController {
     func bind() {
         dropPinButton.rx.tap.asDriver()
             .drive(onNext: { [unowned self] in
-                self.perform(segue: StoryboardSegue.Main.presentModal)
+                self.perform(segue: StoryboardSegue.Main.modalRegister)
             })
             .disposed(by: disposeBag)
         
         trigger.asObservable()
             .bind(to: semiModalVC.refreshTrigger)
             .disposed(by: disposeBag)
+        
+        semiModalVC.selected
+            .subscribe(onNext: { [unowned self] selected in
+                guard let list = self.favoriteList else { return }
+                let coordinate = CLLocationCoordinate2D(latitude: list[selected].latitude, longitude: list[selected].longitude)
+                self.setRegion(coordinate: coordinate)
+                self.floatingPanelController.move(to: .tip, animated: true)
+            })
+            .disposed(by: disposeBag)
     }
     
     func setRegion(coordinate: CLLocationCoordinate2D) {
-        // ajust point to 'coordinate'
+        // focus 'coordinate'
         let span = MKCoordinateSpan(
             latitudeDelta: Map.latitudeDelta,
             longitudeDelta: Map.longitudeDelta
@@ -158,16 +178,6 @@ extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         // called when user location is updated
         if let coordinate = locations.last?.coordinate {
-            setRegion(coordinate: coordinate)
-            
-            // remove pins & drop a pin
-            mapView.removeAnnotations(mapView.annotations)
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = coordinate
-            annotation.title = L10n.Annotation.title
-            mapView.addAnnotation(annotation)
-            mapView.selectAnnotation(annotation, animated: true)
-            
             // draw circle
             let circle = MKCircle(center: coordinate, radius: Map.circleRadius)
             mapView.addOverlay(circle)
@@ -189,10 +199,6 @@ extension MapViewController: MKMapViewDelegate {
 }
 
 extension MapViewController: FloatingPanelControllerDelegate {
-    func floatingPanelDidEndDragging(_ vc: FloatingPanelController, withVelocity velocity: CGPoint, targetPosition: FloatingPanelPosition) {
-        // TODO: targetPositionが変わった時の処理
-    }
-    
     func floatingPanel(_ vc: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout? {
         let floatingPanelLayout = MapViewFloatingPanelLayout()
         return floatingPanelLayout

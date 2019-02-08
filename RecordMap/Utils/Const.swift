@@ -28,5 +28,6 @@ public struct Map {
 public struct SemiModal {
     public struct TableView {
         public static let heightForRow: CGFloat = 55
+        public static let upperSide: CGFloat = 10
     }
 }

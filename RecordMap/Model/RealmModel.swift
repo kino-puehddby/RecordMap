@@ -48,7 +48,7 @@ class RealmModel: Object {
                 realm.add(object)
             }
         } catch {
-            print("*** Realm Error: can't add object to realm ***")
+            debugPrint("*** realm error: can't add object to realm ***")
         }
     }
     

@@ -26,6 +26,7 @@ final class RegisterViewController: UIViewController {
     
     // - Rx
     private let disposeBag = DisposeBag()
+    private let dismiss = PublishSubject<Void>()
     private let textInput = BehaviorRelay<String>(value: "")
     let latitude = BehaviorRelay<Double>(value: 0)
     let longitude = BehaviorRelay<Double>(value: 0)
@@ -54,9 +55,8 @@ final class RegisterViewController: UIViewController {
             .disposed(by: disposeBag)
         
         desideButton.rx.tap.asDriver()
-            .drive(onNext: { [unowned self] in
-                print("latitude = \(self.latitude.value)")
-                print("longitude = \(self.longitude.value)")
+            .do(onNext: { [unowned self] in
+                if self.textInput.value == "" { return }
                 let locationData = LocationModel(
                     name: self.textInput.value,
                     address: self.address.value,
@@ -64,6 +64,12 @@ final class RegisterViewController: UIViewController {
                     longitude: self.longitude.value
                 )
                 self.realm.customAdd(locationData)
+            })
+            .drive(dismiss)
+            .disposed(by: disposeBag)
+        
+        dismiss
+            .subscribe(onNext: {
                 self.dismiss(animated: true, completion: { [unowned self] in
                     self.postDismissionAction?() // call back
                 })
