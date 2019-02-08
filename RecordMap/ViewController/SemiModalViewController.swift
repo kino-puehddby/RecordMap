@@ -58,18 +58,19 @@ extension SemiModalViewController: UITableViewDelegate {
         return SemiModal.TableView.heightForRow
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
         case .delete:
-            LocationModel.delete()
+            // TODO: セルを削除する
+            favoriteList.value[indexPath.row].delete()
             tableView.deleteRows(at: [indexPath], with: .fade)
         default:
             break
         }
-    }
-    
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
     }
 }
 
