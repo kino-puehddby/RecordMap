@@ -65,7 +65,6 @@ extension SemiModalViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
         case .delete:
-            // TODO: セルを削除する
             favoriteList.value[indexPath.row].delete()
             tableView.deleteRows(at: [indexPath], with: .fade)
         default:
