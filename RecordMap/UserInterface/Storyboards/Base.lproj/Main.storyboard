@@ -24,20 +24,14 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Ycz-mG-Evb"/>
                                 </connections>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egp-2Q-UHb">
-                                <rect key="frame" x="305" y="40" width="50" height="50"/>
-                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egp-2Q-UHb">
+                                <rect key="frame" x="305" y="100" width="50" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="C47-bX-vCf"/>
                                     <constraint firstAttribute="width" constant="50" id="MYH-tF-BGz"/>
                                 </constraints>
-                                <state key="normal" title="Pin"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
+                                <state key="normal" image="pin"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -47,7 +41,7 @@
                             <constraint firstItem="Mt9-BA-3kj" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="FKa-Jr-j43"/>
                             <constraint firstItem="Mt9-BA-3kj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GbF-zi-6Gi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Mt9-BA-3kj" secondAttribute="trailing" id="aP5-OH-lyi"/>
-                            <constraint firstItem="egp-2Q-UHb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="xdN-fz-wAl"/>
+                            <constraint firstItem="egp-2Q-UHb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="xdN-fz-wAl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -70,4 +64,7 @@
             <point key="canvasLocation" x="652" y="26"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pin" width="128" height="128"/>
+    </resources>
 </document>

@@ -67,6 +67,7 @@ extension SemiModalViewController: UITableViewDelegate {
         case .delete:
             favoriteList.value[indexPath.row].delete()
             tableView.deleteRows(at: [indexPath], with: .fade)
+        // FIXME: mapViewのAnnotationも消す
         default:
             break
         }

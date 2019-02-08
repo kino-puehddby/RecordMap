@@ -37,6 +37,9 @@ final class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // FIXME: スプラッシュをもっとかっこよくしたい
+        // FIXME: 航空写真、路線図、普通のmapを選べるようにしたい
+        
         setup()
         bind()
     }
@@ -47,7 +50,9 @@ final class MapViewController: UIViewController {
         // put pins to mapView
         favoriteList = LocationModel.read()
         guard let favoriteList = favoriteList else { return }
+        mapView.removeAnnotations(mapView.annotations)
         favoriteList.forEach { data in
+            // FIXME: 新しくAnnotationを生成せずに、データからmapViewに反映したい
             let annotation = MKPointAnnotation()
             annotation.coordinate = CLLocationCoordinate2D(latitude: data.latitude, longitude: data.longitude)
             annotation.title = data.name
@@ -93,7 +98,8 @@ final class MapViewController: UIViewController {
         
         // - Map View
         mapView.setCenter(mapView.userLocation.coordinate, animated: true)
-        mapView.userTrackingMode = .followWithHeading
+        mapView.userTrackingMode = .follow
+        mapView.showsUserLocation = true
         setRegion(coordinate: mapView.userLocation.coordinate)
         
         // - Promote View
@@ -130,10 +136,15 @@ final class MapViewController: UIViewController {
         semiModalVC.selected
             .subscribe(onNext: { [unowned self] selected in
                 guard let list = self.favoriteList else { return }
-                let coordinate = CLLocationCoordinate2D(latitude: list[selected].latitude, longitude: list[selected].longitude)
+                let selectedData = list[selected]
+                let coordinate = CLLocationCoordinate2D(
+                    latitude: selectedData.latitude,
+                    longitude: selectedData.longitude
+                )
                 self.setRegion(coordinate: coordinate)
                 self.floatingPanelController.move(to: .tip, animated: true)
                 self.semiModalVC.table.deselectRow(at: [0, selected], animated: true)
+                // FIXME: 選択されたセルに紐づくAnnotationを拡大したい
             })
             .disposed(by: disposeBag)
     }

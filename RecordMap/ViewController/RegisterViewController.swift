@@ -20,11 +20,8 @@ final class RegisterViewController: UIViewController {
     @IBOutlet weak private var textField: UITextField!
     @IBOutlet weak private var desideButton: UIButton!
     
-    private let realm = try! Realm()
-    
     var postDismissionAction: (() -> Void)?
     
-    // - Rx
     private let disposeBag = DisposeBag()
     private let dismiss = PublishSubject<Void>()
     private let textInput = BehaviorRelay<String>(value: "")
@@ -34,6 +31,8 @@ final class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // FIXME: モーダルのUIをもっとかっこよくしたい
         
         setup()
         bind()
@@ -63,7 +62,8 @@ final class RegisterViewController: UIViewController {
                     latitude: self.latitude.value,
                     longitude: self.longitude.value
                 )
-                self.realm.customAdd(locationData)
+                let realm = try! Realm()
+                realm.customAdd(locationData)
             })
             .drive(dismiss)
             .disposed(by: disposeBag)
@@ -71,7 +71,8 @@ final class RegisterViewController: UIViewController {
         dismiss
             .subscribe(onNext: {
                 self.dismiss(animated: true, completion: { [unowned self] in
-                    self.postDismissionAction?() // call back
+                    // reflect changes on TableView
+                    self.postDismissionAction?()
                 })
             })
             .disposed(by: disposeBag)
