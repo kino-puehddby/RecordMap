@@ -20,6 +20,7 @@ final class MapViewController: UIViewController {
 
     @IBOutlet weak private var mapView: MKMapView!
     @IBOutlet weak private var dropPinButton: UIButton!
+    @IBOutlet weak private var segmentedControl: UISegmentedControl!
     
     private lazy var floatingPanelController: FloatingPanelController = {preconditionFailure()}()
     private lazy var locationManager: CLLocationManager = {preconditionFailure()}()
@@ -38,7 +39,8 @@ final class MapViewController: UIViewController {
         super.viewDidLoad()
         
         // FIXME: スプラッシュをもっとかっこよくしたい
-        // FIXME: 航空写真、路線図、普通のmapを選べるようにしたい
+        
+        print(segmentedControl.layer.cornerRadius)
         
         setup()
         bind()
@@ -145,6 +147,21 @@ final class MapViewController: UIViewController {
                 self.floatingPanelController.move(to: .tip, animated: true)
                 self.semiModalVC.table.deselectRow(at: [0, selected], animated: true)
                 // FIXME: 選択されたセルに紐づくAnnotationを拡大したい
+            })
+            .disposed(by: disposeBag)
+        
+        segmentedControl.rx.value
+            .subscribe(onNext: { [unowned self] index in
+                switch index {
+                case 0:
+                    self.mapView.mapType = .standard
+                case 1:
+                    self.mapView.mapType = .satelliteFlyover
+                case 2:
+                    self.mapView.mapType = .hybridFlyover
+                default:
+                    break
+                }
             })
             .disposed(by: disposeBag)
     }
