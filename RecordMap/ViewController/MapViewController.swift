@@ -33,7 +33,7 @@ final class MapViewController: UIViewController {
     private var favoriteList: Results<LocationModel>?
     
     private let disposeBag = DisposeBag()
-    let trigger = PublishSubject<Void>()
+    let added = PublishSubject<Void>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,19 +50,7 @@ final class MapViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // put pins to mapView
-        favoriteList = LocationModel.read()
-        guard let favoriteList = favoriteList else { return }
-        mapView.removeAnnotations(mapView.annotations)
-        favoriteList.forEach { data in
-            // FIXME: 新しくAnnotationを生成せずに、データからmapViewに反映したい
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = CLLocationCoordinate2D(latitude: data.latitude, longitude: data.longitude)
-            annotation.title = data.name
-            annotation.subtitle = data.address
-            mapView.addAnnotation(annotation)
-        }
-        debugPrint(favoriteList)
+        reloadMapView()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -77,7 +65,7 @@ final class MapViewController: UIViewController {
             let vc = segue.destination as! RegisterViewController
             vc.latitude.accept(latitude)
             vc.longitude.accept(longitude)
-            vc.postDismissionAction = { self.trigger.onNext(()) }
+            vc.postDismissionAction = { self.added.onNext(()) }
             updateAddress(to: vc, latitude: latitude, longitude: longitude)
         default:
             break
@@ -132,8 +120,14 @@ final class MapViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-        trigger.asObservable()
+        let addedLocationData = added.share(replay: 1)
+        addedLocationData
             .bind(to: semiModalVC.refreshTrigger)
+            .disposed(by: disposeBag)
+        addedLocationData
+            .subscribe(onNext: { [unowned self] in
+                self.reloadMapView()
+            })
             .disposed(by: disposeBag)
         
         semiModalVC.selected
@@ -151,6 +145,13 @@ final class MapViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
+        semiModalVC.deleted
+            .subscribe(onNext: { [unowned self] index in
+                self.mapView.removeAnnotation(self.mapView.annotations[index])
+                self.reloadMapView()
+            })
+            .disposed(by: disposeBag)
+        
         segmentedControl.rx.value
             .subscribe(onNext: { [unowned self] index in
                 switch index {
@@ -165,6 +166,23 @@ final class MapViewController: UIViewController {
                 }
             })
             .disposed(by: disposeBag)
+    }
+    
+    func reloadMapView() {
+        // put pins to mapView
+        // FIXME: 限定的に再描画する
+        favoriteList = LocationModel.read()
+        guard let favoriteList = favoriteList else { return }
+        mapView.removeAnnotations(mapView.annotations)
+        favoriteList.forEach { data in
+            // FIXME: 新しくAnnotationを生成せずに、データからmapViewに反映したい
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = CLLocationCoordinate2D(latitude: data.latitude, longitude: data.longitude)
+            annotation.title = data.name
+            annotation.subtitle = data.address
+            mapView.addAnnotation(annotation)
+        }
+        debugPrint(favoriteList)
     }
     
     func setRegion(coordinate: CLLocationCoordinate2D) {
@@ -208,6 +226,9 @@ extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         // called when user location is updated
         if let coordinate = locations.last?.coordinate {
+            // follow the current location
+            setRegion(coordinate: coordinate)
+            
             // draw circle
             let circle = MKCircle(center: coordinate, radius: Map.circleRadius)
             mapView.addOverlay(circle)

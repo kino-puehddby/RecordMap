@@ -20,6 +20,7 @@ final class SemiModalViewController: UIViewController {
     var favoriteList = BehaviorRelay<Results<LocationModel>>(value: LocationModel.read())
     var refreshTrigger = PublishSubject<Void>()
     var selected = PublishSubject<Int>()
+    var deleted = PublishSubject<Int>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,7 +68,7 @@ extension SemiModalViewController: UITableViewDelegate {
         case .delete:
             favoriteList.value[indexPath.row].delete()
             tableView.deleteRows(at: [indexPath], with: .fade)
-        // FIXME: mapViewのAnnotationも消す
+            deleted.onNext(indexPath.row)
         default:
             break
         }
