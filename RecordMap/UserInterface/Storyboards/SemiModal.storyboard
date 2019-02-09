@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--お気に入りスポット-->
+        <!--Semi Modal View Controller-->
         <scene sceneID="fFF-zU-0et">
             <objects>
                 <viewController id="SVX-bO-iXy" customClass="SemiModalViewController" customModule="RecordMap" customModuleProvider="target" sceneMemberID="viewController">
@@ -36,7 +36,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="m2l-8W-b3G"/>
                     </view>
-                    <navigationItem key="navigationItem" title="お気に入りスポット" id="3fq-5u-m9u"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="Nb2-u6-8Yl" id="3ya-v1-FEq"/>
