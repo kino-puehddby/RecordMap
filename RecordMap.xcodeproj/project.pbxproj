@@ -53,7 +53,7 @@
 		4E5C52FC220D21D700FABADB /* RealmMigrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMigrator.swift; sourceTree = "<group>"; };
 		4E5C52FE220D225800FABADB /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		4EBA460C22041BF800AB71B1 /* PromoteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromoteView.xib; sourceTree = "<group>"; };
-		4EBA460E22041C1B00AB71B1 /* PromoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PromoteView.swift; path = /Users/sugitahisaya/github/RecordMap/RecordMap/View/PromoteView.swift; sourceTree = "<absolute>"; };
+		4EBA460E22041C1B00AB71B1 /* PromoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PromoteView.swift; path = /Users/user/github/RecordMap/RecordMap/View/PromoteView.swift; sourceTree = "<absolute>"; };
 		4EBA46122204305C00AB71B1 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		4ECCBE892202D78F0045CE1D /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		4ECCBE9D2202D99D0045CE1D /* StoryboardScenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoryboardScenes.swift; path = RecordMap/Utils/Generated/StoryboardScenes.swift; sourceTree = SOURCE_ROOT; };
