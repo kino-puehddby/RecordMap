@@ -19,6 +19,7 @@ final class SemiModalViewController: UIViewController {
     private let disposeBag = DisposeBag()
     var favoriteList = BehaviorRelay<Results<LocationModel>>(value: LocationModel.read())
     var refreshTrigger = PublishSubject<Void>()
+    var addFavoriteTrigger = PublishSubject<Void>()
     var selected = PublishSubject<Int>()
     var deleted = PublishSubject<Int>()
     
@@ -55,6 +56,18 @@ final class SemiModalViewController: UIViewController {
 }
 
 extension SemiModalViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return SemiModal.TableView.headerCellHeight
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = SemiModalTableViewHeader.loadFromNib()
+        header.button.rx.tap
+            .bind(to: addFavoriteTrigger)
+            .disposed(by: disposeBag)
+        return header
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return SemiModal.TableView.heightForRow
     }

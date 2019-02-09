@@ -24,15 +24,6 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Ycz-mG-Evb"/>
                                 </connections>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egp-2Q-UHb">
-                                <rect key="frame" x="305" y="100" width="50" height="50"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="C47-bX-vCf"/>
-                                    <constraint firstAttribute="width" constant="50" id="MYH-tF-BGz"/>
-                                </constraints>
-                                <state key="normal" image="pin"/>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZPy-e0-7Ox">
                                 <rect key="frame" x="45.5" y="40" width="284" height="28"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -53,7 +44,6 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="egp-2Q-UHb" secondAttribute="trailing" constant="20" id="6EO-Q2-Lu4"/>
                             <constraint firstItem="Mt9-BA-3kj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="BWi-ub-iTu"/>
                             <constraint firstItem="Mt9-BA-3kj" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="FKa-Jr-j43"/>
                             <constraint firstItem="Mt9-BA-3kj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GbF-zi-6Gi"/>
@@ -64,20 +54,18 @@
                             <constraint firstItem="ZPy-e0-7Ox" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="dlw-GH-kfG"/>
                             <constraint firstItem="f4x-75-EEA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kej-yd-vzt"/>
                             <constraint firstItem="f4x-75-EEA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="vCU-vU-WaQ"/>
-                            <constraint firstItem="egp-2Q-UHb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="xdN-fz-wAl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="dropPinButton" destination="egp-2Q-UHb" id="m3k-DM-Hak"/>
                         <outlet property="mapView" destination="Mt9-BA-3kj" id="FKb-Ct-Q5Y"/>
                         <outlet property="segmentedControl" destination="f4x-75-EEA" id="2WI-59-jiD"/>
-                        <segue destination="7zV-yV-JZd" kind="presentation" identifier="modalRegister" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="hYg-FF-bgs"/>
+                        <segue destination="7zV-yV-JZd" kind="presentation" identifier="modalRegister" id="hYg-FF-bgs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="77.599999999999994" y="26.53673163418291"/>
+            <point key="canvasLocation" x="63" y="-24"/>
         </scene>
         <!--Register-->
         <scene sceneID="iTp-2Y-rwm">
@@ -85,10 +73,7 @@
                 <viewControllerPlaceholder storyboardName="Register" id="7zV-yV-JZd" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7JX-R7-pRD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="652" y="26"/>
+            <point key="canvasLocation" x="618" y="-25"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="pin" width="128" height="128"/>
-    </resources>
 </document>

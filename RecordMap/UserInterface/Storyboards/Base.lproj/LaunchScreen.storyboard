@@ -21,6 +21,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_icon" translatesAutoresizingMaskIntoConstraints="NO" id="9XD-fk-BU1">
                                 <rect key="frame" x="112.5" y="258.5" width="150" height="150"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="90A-X5-e8o"/>
                                     <constraint firstAttribute="width" secondItem="9XD-fk-BU1" secondAttribute="height" multiplier="1:1" id="U62-YO-3Cp"/>
@@ -43,7 +44,7 @@
     <resources>
         <image name="app_icon" width="57" height="57"/>
         <namedColor name="Water">
-            <color red="0.1803921568627451" green="0.80000000000000004" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

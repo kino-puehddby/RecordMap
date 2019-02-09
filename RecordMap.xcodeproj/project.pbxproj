@@ -34,11 +34,13 @@
 		4EF598102202AEE500B84379 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5980F2202AEE500B84379 /* AppDelegate.swift */; };
 		4EF598122202AEE500B84379 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF598112202AEE500B84379 /* MapViewController.swift */; };
 		4EF598152202AEE500B84379 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EF598132202AEE500B84379 /* Main.storyboard */; };
-		4EF598172202AEE700B84379 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EF598162202AEE700B84379 /* Assets.xcassets */; };
+		4EF598172202AEE700B84379 /* add 4.00.49.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF598162202AEE700B84379 /* add 4.00.49.png */; };
 		4EF5981A2202AEE700B84379 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EF598182202AEE700B84379 /* LaunchScreen.storyboard */; };
 		69C4786813AC9AE25A5F291E /* Pods_RecordMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5725DAE8C820FEE1556625DF /* Pods_RecordMap.framework */; };
 		A0101C64220B348B003FAF55 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0101C63220B348B003FAF55 /* LocationModel.swift */; };
 		A0101C67220B4160003FAF55 /* RealmExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0101C66220B4160003FAF55 /* RealmExtension.swift */; };
+		A01C0A79220F5FBA00C46D79 /* SemiModalTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C0A78220F5FBA00C46D79 /* SemiModalTableViewHeader.swift */; };
+		A01C0A7B220F5FCF00C46D79 /* SemiModalTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01C0A7A220F5FCF00C46D79 /* SemiModalTableViewHeader.xib */; };
 		A0D1DDD6220B2A1100217344 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D1DDD4220B2A1100217344 /* RealmSwift.framework */; };
 		A0D1DDD7220B2A1100217344 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D1DDD5220B2A1100217344 /* Realm.framework */; };
 /* End PBXBuildFile section */
@@ -73,13 +75,15 @@
 		4EF5980F2202AEE500B84379 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EF598112202AEE500B84379 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		4EF598142202AEE500B84379 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4EF598162202AEE700B84379 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4EF598162202AEE700B84379 /* add 4.00.49.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "add 4.00.49.png"; path = "Assets.xcassets/Common/add .imageset/add 4.00.49.png"; sourceTree = "<group>"; };
 		4EF598192202AEE700B84379 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4EF5981B2202AEE700B84379 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5725DAE8C820FEE1556625DF /* Pods_RecordMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecordMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E0C960EE10EFB43F93BE94F /* Pods-RecordMapUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecordMapUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RecordMapUITests/Pods-RecordMapUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A0101C63220B348B003FAF55 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		A0101C66220B4160003FAF55 /* RealmExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmExtension.swift; sourceTree = "<group>"; };
+		A01C0A78220F5FBA00C46D79 /* SemiModalTableViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemiModalTableViewHeader.swift; sourceTree = "<group>"; };
+		A01C0A7A220F5FCF00C46D79 /* SemiModalTableViewHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SemiModalTableViewHeader.xib; sourceTree = "<group>"; };
 		A0D1DDD4220B2A1100217344 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		A0D1DDD5220B2A1100217344 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		A6F6E55776D05D6AB14FE104 /* Pods_RecordMapUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecordMapUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				4EBA460E22041C1B00AB71B1 /* PromoteView.swift */,
+				A01C0A78220F5FBA00C46D79 /* SemiModalTableViewHeader.swift */,
 				4E5C52F8220C2B9600FABADB /* SemiModalTableViewCell.swift */,
 			);
 			path = View;
@@ -148,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				4EBA460C22041BF800AB71B1 /* PromoteView.xib */,
+				A01C0A7A220F5FCF00C46D79 /* SemiModalTableViewHeader.xib */,
 				4E5C52F9220C2B9600FABADB /* SemiModalTableViewCell.xib */,
 			);
 			path = XIBs;
@@ -165,7 +171,7 @@
 		4ECCBE872202D75A0045CE1D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4EF598162202AEE700B84379 /* Assets.xcassets */,
+				4EF598162202AEE700B84379 /* add 4.00.49.png */,
 				4ECCBE882202D78F0045CE1D /* Strings */,
 			);
 			path = Resources;
@@ -357,7 +363,8 @@
 				4EE4579E220973040017B9BF /* GoogleService-Info.plist in Resources */,
 				4EF5981A2202AEE700B84379 /* LaunchScreen.storyboard in Resources */,
 				4ECCBE8A2202D78F0045CE1D /* Localizable.strings in Resources */,
-				4EF598172202AEE700B84379 /* Assets.xcassets in Resources */,
+				A01C0A7B220F5FCF00C46D79 /* SemiModalTableViewHeader.xib in Resources */,
+				4EF598172202AEE700B84379 /* add 4.00.49.png in Resources */,
 				4E5C52FB220C2B9600FABADB /* SemiModalTableViewCell.xib in Resources */,
 				4EF598152202AEE500B84379 /* Main.storyboard in Resources */,
 				4EE4579A220966480017B9BF /* Register.storyboard in Resources */,
@@ -485,6 +492,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A01C0A79220F5FBA00C46D79 /* SemiModalTableViewHeader.swift in Sources */,
 				4E3453F0220843B3007DAC66 /* SemiModalViewController.swift in Sources */,
 				A0101C64220B348B003FAF55 /* LocationModel.swift in Sources */,
 				4E5C52FD220D21D700FABADB /* RealmMigrator.swift in Sources */,

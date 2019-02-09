@@ -19,7 +19,6 @@ import RealmSwift
 final class MapViewController: UIViewController {
 
     @IBOutlet weak private var mapView: MKMapView!
-    @IBOutlet weak private var dropPinButton: UIButton!
     @IBOutlet weak private var segmentedControl: UISegmentedControl!
     
     private lazy var floatingPanelController: FloatingPanelController = {preconditionFailure()}()
@@ -38,10 +37,7 @@ final class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // FIXME: スプラッシュをもっとかっこよくしたい
         // FIXME: 右上のコンパスの位置を変更したい
-        
-        print(segmentedControl.layer.cornerRadius)
         
         setup()
         bind()
@@ -114,12 +110,6 @@ final class MapViewController: UIViewController {
     }
     
     func bind() {
-        dropPinButton.rx.tap.asDriver()
-            .drive(onNext: { [unowned self] in
-                self.perform(segue: StoryboardSegue.Main.modalRegister)
-            })
-            .disposed(by: disposeBag)
-        
         let addedLocationData = added.share(replay: 1)
         addedLocationData
             .bind(to: semiModalVC.refreshTrigger)
@@ -127,6 +117,13 @@ final class MapViewController: UIViewController {
         addedLocationData
             .subscribe(onNext: { [unowned self] in
                 self.reloadMapView()
+            })
+            .disposed(by: disposeBag)
+        
+        semiModalVC.addFavoriteTrigger
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [unowned self] in
+                self.perform(segue: StoryboardSegue.Main.modalRegister)
             })
             .disposed(by: disposeBag)
         
@@ -141,7 +138,7 @@ final class MapViewController: UIViewController {
                 self.setRegion(coordinate: coordinate)
                 self.floatingPanelController.move(to: .tip, animated: true)
                 self.semiModalVC.table.deselectRow(at: [0, selected], animated: true)
-                // FIXME: 選択されたセルに紐づくAnnotationを拡大したい
+                self.mapView.selectAnnotation(self.mapView.annotations[selected], animated: true)
             })
             .disposed(by: disposeBag)
         
@@ -170,12 +167,12 @@ final class MapViewController: UIViewController {
     
     func reloadMapView() {
         // put pins to mapView
-        // FIXME: 限定的に再描画する
+        // FIXME: 範囲を限定して再描画したい
         favoriteList = LocationModel.read()
         guard let favoriteList = favoriteList else { return }
         mapView.removeAnnotations(mapView.annotations)
         favoriteList.forEach { data in
-            // FIXME: 新しくAnnotationを生成せずに、データからmapViewに反映したい
+            // FIXME: 毎回Annotationを生成せずに、データベースからmapViewに反映したい
             let annotation = MKPointAnnotation()
             annotation.coordinate = CLLocationCoordinate2D(latitude: data.latitude, longitude: data.longitude)
             annotation.title = data.name
