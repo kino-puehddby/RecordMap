@@ -1,5 +1,6 @@
 // Localizable.string
-"Annotation.title"="I'm here";
+"Register.TextField.Placeholder"="表示名を入力してください。";
+
 
 // Sample
 "Common.Ok"="OK";

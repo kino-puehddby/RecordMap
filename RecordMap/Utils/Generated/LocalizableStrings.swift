@@ -12,11 +12,6 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name
 internal enum L10n {
 
-  internal enum Annotation {
-    /// I'm here
-    internal static let title = L10n.tr("Localizable", "Annotation.title")
-  }
-
   internal enum Common {
     /// キャンセル
     internal static let cancel = L10n.tr("Localizable", "Common.Cancel")
@@ -43,6 +38,13 @@ internal enum L10n {
       internal static func value(_ p1: String) -> String {
         return L10n.tr("Localizable", "Common.Price.value", p1)
       }
+    }
+  }
+
+  internal enum Register {
+    internal enum TextField {
+      /// 表示名を入力してください。
+      internal static let placeholder = L10n.tr("Localizable", "Register.TextField.Placeholder")
     }
   }
 }

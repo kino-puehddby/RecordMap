@@ -60,7 +60,7 @@
                     <connections>
                         <outlet property="mapView" destination="Mt9-BA-3kj" id="FKb-Ct-Q5Y"/>
                         <outlet property="segmentedControl" destination="f4x-75-EEA" id="2WI-59-jiD"/>
-                        <segue destination="7zV-yV-JZd" kind="presentation" identifier="modalRegister" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="hYg-FF-bgs"/>
+                        <segue destination="7zV-yV-JZd" kind="show" identifier="modalRegister" id="hYg-FF-bgs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

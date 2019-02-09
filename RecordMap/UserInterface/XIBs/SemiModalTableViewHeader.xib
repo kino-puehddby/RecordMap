@@ -23,7 +23,6 @@
                         <constraint firstAttribute="height" constant="20" id="D7C-LU-VMT"/>
                     </constraints>
                     <fontDescription key="fontDescription" name=".SFNSText" family=".SF NS Text" pointSize="36"/>
-                    <state key="normal" image="add"/>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="お気に入り" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rz9-ab-OHs">
                     <rect key="frame" x="145" y="30" width="85" height="25"/>
@@ -46,7 +45,4 @@
             </connections>
         </view>
     </objects>
-    <resources>
-        <image name="add" width="491.51998901367188" height="491.51998901367188"/>
-    </resources>
 </document>

@@ -19,8 +19,8 @@ final class RegisterViewController: UIViewController {
     @IBOutlet weak private var closeButton: UIButton!
     @IBOutlet weak private var textField: UITextField!
     @IBOutlet weak private var desideButton: UIButton!
-    
-    var postDismissionAction: (() -> Void)?
+        
+    weak var delegate: MapViewControllerDelegate?
     
     private let disposeBag = DisposeBag()
     private let dismiss = PublishSubject<Void>()
@@ -32,7 +32,7 @@ final class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // FIXME: モーダルのUIをもっとかっこよくしたい
+        // FIXME: モーダルの繊維アニメーションをもっとかっこよくしたい
         
         setup()
         bind()
@@ -40,6 +40,7 @@ final class RegisterViewController: UIViewController {
     
     func setup() {
         modalView.layer.cornerRadius = 12
+        textField.placeholder = L10n.Register.TextField.placeholder
     }
     
     func bind() {
@@ -69,10 +70,10 @@ final class RegisterViewController: UIViewController {
             .disposed(by: disposeBag)
         
         dismiss
-            .subscribe(onNext: {
-                self.dismiss(animated: true, completion: { [unowned self] in
+            .subscribe(onNext: { [unowned self] in
+                self.dismiss(animated: true, completion: { [weak self] in
                     // reflect changes on TableView
-                    self.postDismissionAction?()
+                    self?.delegate?.onNextAdded()
                 })
             })
             .disposed(by: disposeBag)

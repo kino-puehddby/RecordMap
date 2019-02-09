@@ -15,6 +15,11 @@ import RxCocoa
 import SnapKit
 import FloatingPanel
 import RealmSwift
+import Presentr
+
+protocol MapViewControllerDelegate: class {
+    func onNextAdded()
+}
 
 final class MapViewController: UIViewController {
 
@@ -30,6 +35,7 @@ final class MapViewController: UIViewController {
     private var longitude: Double = 0.0
     private var address: String = ""
     private var favoriteList: Results<LocationModel>?
+    let presenter: Presentr = Presentr(presentationType: .popup)
     
     private let disposeBag = DisposeBag()
     let added = PublishSubject<Void>()
@@ -54,20 +60,7 @@ final class MapViewController: UIViewController {
         
         floatingPanelController.removePanelFromParent(animated: true)
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        switch segue.identifier {
-        case StoryboardSegue.Main.modalRegister.rawValue:
-            let vc = segue.destination as! RegisterViewController
-            vc.latitude.accept(latitude)
-            vc.longitude.accept(longitude)
-            vc.postDismissionAction = { self.added.onNext(()) }
-            updateAddress(to: vc, latitude: latitude, longitude: longitude)
-        default:
-            break
-        }
-    }
-    
+        
     // -----------------------
     // - Private Functions
     // -----------------------
@@ -121,9 +114,8 @@ final class MapViewController: UIViewController {
             .disposed(by: disposeBag)
         
         semiModalVC.addFavoriteTrigger
-            .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [unowned self] in
-                self.perform(segue: StoryboardSegue.Main.modalRegister)
+                self.presentRegister()
             })
             .disposed(by: disposeBag)
         
@@ -205,6 +197,15 @@ final class MapViewController: UIViewController {
             vc.address.accept(address)
         }
     }
+    
+    func presentRegister() {
+        let vc = StoryboardScene.Register.initialScene.instantiate()
+        vc.latitude.accept(latitude)
+        vc.longitude.accept(longitude)
+        vc.delegate = self
+        updateAddress(to: vc, latitude: latitude, longitude: longitude)
+        customPresentViewController(presenter, viewController: vc, animated: true)
+    }
 }
 
 extension MapViewController: CLLocationManagerDelegate {
@@ -277,5 +278,11 @@ class MapViewFloatingPanelLayout: FloatingPanelLayout {
             surfaceView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: Map.FloatingPanel.sideSpace),
             surfaceView.widthAnchor.constraint(equalToConstant: Map.FloatingPanel.width)
         ]
+    }
+}
+
+extension MapViewController: MapViewControllerDelegate {
+    func onNextAdded() {
+        added.onNext(())
     }
 }
