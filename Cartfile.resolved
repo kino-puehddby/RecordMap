@@ -1,3 +1,5 @@
+github "IcaliaLabs/Presentr" "1.9"
 github "ReactiveX/RxSwift" "4.4.0"
 github "SnapKit/SnapKit" "4.2.0"
+github "realm/realm-cocoa" "v3.13.1"
 github "scenee/FloatingPanel" "v1.3.3"

@@ -24,50 +24,56 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Ycz-mG-Evb"/>
                                 </connections>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egp-2Q-UHb">
-                                <rect key="frame" x="305" y="40" width="50" height="50"/>
-                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="C47-bX-vCf"/>
-                                    <constraint firstAttribute="width" constant="50" id="MYH-tF-BGz"/>
-                                </constraints>
-                                <state key="normal" title="Pin"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZPy-e0-7Ox">
+                                <rect key="frame" x="45.5" y="40" width="284" height="28"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="25"/>
+                                        <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                            </button>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="f4x-75-EEA">
+                                <rect key="frame" x="45.5" y="40" width="284" height="29"/>
+                                <segments>
+                                    <segment title="標準"/>
+                                    <segment title="航空写真"/>
+                                    <segment title="ハイブリッド"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="egp-2Q-UHb" secondAttribute="trailing" constant="20" id="6EO-Q2-Lu4"/>
                             <constraint firstItem="Mt9-BA-3kj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="BWi-ub-iTu"/>
                             <constraint firstItem="Mt9-BA-3kj" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="FKa-Jr-j43"/>
                             <constraint firstItem="Mt9-BA-3kj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GbF-zi-6Gi"/>
+                            <constraint firstItem="ZPy-e0-7Ox" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JQQ-E7-FXD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Mt9-BA-3kj" secondAttribute="trailing" id="aP5-OH-lyi"/>
-                            <constraint firstItem="egp-2Q-UHb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="xdN-fz-wAl"/>
+                            <constraint firstItem="ZPy-e0-7Ox" firstAttribute="height" secondItem="f4x-75-EEA" secondAttribute="height" id="c2r-aB-Om1"/>
+                            <constraint firstItem="ZPy-e0-7Ox" firstAttribute="width" secondItem="f4x-75-EEA" secondAttribute="width" id="cHD-Xa-TXv"/>
+                            <constraint firstItem="ZPy-e0-7Ox" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="dlw-GH-kfG"/>
+                            <constraint firstItem="f4x-75-EEA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kej-yd-vzt"/>
+                            <constraint firstItem="f4x-75-EEA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="vCU-vU-WaQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="dropPinButton" destination="egp-2Q-UHb" id="m3k-DM-Hak"/>
                         <outlet property="mapView" destination="Mt9-BA-3kj" id="FKb-Ct-Q5Y"/>
-                        <segue destination="7zV-yV-JZd" kind="presentation" identifier="presentModal" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="hYg-FF-bgs"/>
+                        <outlet property="segmentedControl" destination="f4x-75-EEA" id="2WI-59-jiD"/>
+                        <segue destination="7zV-yV-JZd" kind="show" identifier="modalRegister" id="hYg-FF-bgs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="77.599999999999994" y="26.53673163418291"/>
+            <point key="canvasLocation" x="63" y="-24"/>
         </scene>
-        <!--Modal-->
+        <!--Register-->
         <scene sceneID="iTp-2Y-rwm">
             <objects>
-                <viewControllerPlaceholder storyboardName="Modal" id="7zV-yV-JZd" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Register" id="7zV-yV-JZd" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7JX-R7-pRD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="652" y="26"/>
+            <point key="canvasLocation" x="665" y="-25"/>
         </scene>
     </scenes>
 </document>

@@ -1,5 +1,7 @@
 // Localizable.string
-"Annotation.title"="I'm here";
+"Register.Placeholder"="表示名を入力してください。";
+"Register.Add"="お気に入り登録";
+"Register.Edit"="登録名編集";
 
 // Sample
 "Common.Ok"="OK";

@@ -12,11 +12,6 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name
 internal enum L10n {
 
-  internal enum Annotation {
-    /// I'm here
-    internal static let title = L10n.tr("Localizable", "Annotation.title")
-  }
-
   internal enum Common {
     /// キャンセル
     internal static let cancel = L10n.tr("Localizable", "Common.Cancel")
@@ -44,6 +39,15 @@ internal enum L10n {
         return L10n.tr("Localizable", "Common.Price.value", p1)
       }
     }
+  }
+
+  internal enum Register {
+    /// お気に入り登録
+    internal static let add = L10n.tr("Localizable", "Register.Add")
+    /// 登録名編集
+    internal static let edit = L10n.tr("Localizable", "Register.Edit")
+    /// 表示名を入力してください。
+    internal static let placeholder = L10n.tr("Localizable", "Register.Placeholder")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
