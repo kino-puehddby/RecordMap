@@ -42,7 +42,7 @@ final class SemiModalViewController: UIViewController {
         refreshTrigger.asObservable()
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [unowned self] in
-                self.updateTableView()
+                self.reloadTableView()
             })
             .disposed(by: disposeBag)
         
@@ -52,7 +52,7 @@ final class SemiModalViewController: UIViewController {
             .disposed(by: disposeBag)
     }
     
-    func updateTableView() {
+    func reloadTableView() {
         let list = LocationModel.read()
         favoriteList.accept(list)
         tableView.reloadData()

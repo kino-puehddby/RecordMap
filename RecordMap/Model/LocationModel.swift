@@ -33,7 +33,7 @@ final class LocationModel: RealmModel {
     
     static func update(new: LocationModel, at index: Int) {
         let realm = try! Realm()
-        var target = LocationModel.read()[index]
+        let target = LocationModel.read()[index]
         do {
             try realm.write {
                 target.name = new.name

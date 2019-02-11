@@ -80,7 +80,7 @@ final class MapViewController: UIViewController {
         mapView.setCenter(mapView.userLocation.coordinate, animated: true)
         mapView.userTrackingMode = .follow
         mapView.showsUserLocation = true
-        setRegion(coordinate: mapView.userLocation.coordinate)
+        focus(on: mapView.userLocation.coordinate)
         
         // - Promote View
         promoteView = PromoteView.loadFromNib()
@@ -127,7 +127,7 @@ final class MapViewController: UIViewController {
                     latitude: selectedData.latitude,
                     longitude: selectedData.longitude
                 )
-                self.setRegion(coordinate: coordinate)
+                self.focus(on: coordinate)
                 self.floatingPanelController.move(to: .tip, animated: true)
                 self.semiModalVC.table.deselectRow(at: [0, selected], animated: true)
             })
@@ -179,7 +179,7 @@ final class MapViewController: UIViewController {
         debugPrint(favoriteList)
     }
     
-    func setRegion(coordinate: CLLocationCoordinate2D) {
+    func focus(on coordinate: CLLocationCoordinate2D) {
         // focus 'coordinate'
         let span = MKCoordinateSpan(
             latitudeDelta: Map.latitudeDelta,
@@ -187,6 +187,17 @@ final class MapViewController: UIViewController {
         )
         let region = MKCoordinateRegion(center: coordinate, span: span)
         mapView.setRegion(region, animated: true)
+    }
+    
+    func presentRegister(registerMode: RegisterMode, index: Int? = nil) {
+        let vc = StoryboardScene.Register.initialScene.instantiate()
+        vc.latitude.accept(latitude)
+        vc.longitude.accept(longitude)
+        vc.selectedIndex.accept(index)
+        vc.registerMode = registerMode
+        vc.delegate = self
+        updateAddress(to: vc, latitude: latitude, longitude: longitude)
+        customPresentViewController(presenter, viewController: vc, animated: true)
     }
     
     func updateAddress(to vc: RegisterViewController, latitude: Double, longitude: Double) {
@@ -201,17 +212,6 @@ final class MapViewController: UIViewController {
             address += placemark.subThoroughfare ?? ""
             vc.address.accept(address)
         }
-    }
-    
-    func presentRegister(registerMode: RegisterMode, index: Int? = nil) {
-        let vc = StoryboardScene.Register.initialScene.instantiate()
-        vc.latitude.accept(latitude)
-        vc.longitude.accept(longitude)
-        vc.selectedIndex.accept(index)
-        vc.registerMode = registerMode
-        vc.delegate = self
-        updateAddress(to: vc, latitude: latitude, longitude: longitude)
-        customPresentViewController(presenter, viewController: vc, animated: true)
     }
 }
 
@@ -232,9 +232,10 @@ extension MapViewController: CLLocationManagerDelegate {
         // called when user location is updated
         if let coordinate = locations.last?.coordinate {
             // follow the current location
-            setRegion(coordinate: coordinate)
+            focus(on: coordinate)
             
             // draw circle
+            // TODO: データベースに通った経路を記録する
             let circle = MKCircle(center: coordinate, radius: Map.circleRadius)
             mapView.addOverlay(circle)
             
@@ -249,7 +250,6 @@ extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let circleView = MKCircleRenderer(overlay: overlay)
         circleView.fillColor = .red
-        circleView.alpha = 0.9
         return circleView
     }
 }

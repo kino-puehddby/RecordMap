@@ -18,7 +18,7 @@ class SemiModalTableViewHeader: UIView, NibReusable {
         super.awakeFromNib()
         
         favoriteRegisterButton.setImage(Asset.add.image.withRenderingMode(.alwaysTemplate), for: .normal)
-        favoriteRegisterButton.tintColor = UIColor(red: 0, green: 122/255, blue: 1, alpha: 1)
+        favoriteRegisterButton.tintColor = Asset.systemBlueColor.color
     }
 }
 
