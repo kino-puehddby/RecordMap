@@ -37,7 +37,6 @@
 		4EF5981A2202AEE700B84379 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EF598182202AEE700B84379 /* LaunchScreen.storyboard */; };
 		69C4786813AC9AE25A5F291E /* Pods_RecordMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5725DAE8C820FEE1556625DF /* Pods_RecordMap.framework */; };
 		A0101C64220B348B003FAF55 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0101C63220B348B003FAF55 /* LocationModel.swift */; };
-		A0101C67220B4160003FAF55 /* RealmExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0101C66220B4160003FAF55 /* RealmExtension.swift */; };
 		A01C0A79220F5FBA00C46D79 /* SemiModalTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C0A78220F5FBA00C46D79 /* SemiModalTableViewHeader.swift */; };
 		A01C0A7B220F5FCF00C46D79 /* SemiModalTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01C0A7A220F5FCF00C46D79 /* SemiModalTableViewHeader.xib */; };
 		A01DDE79220F69B20065BA34 /* Presentr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01DDE78220F69B20065BA34 /* Presentr.framework */; };
@@ -81,7 +80,6 @@
 		5725DAE8C820FEE1556625DF /* Pods_RecordMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecordMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E0C960EE10EFB43F93BE94F /* Pods-RecordMapUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecordMapUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RecordMapUITests/Pods-RecordMapUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A0101C63220B348B003FAF55 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
-		A0101C66220B4160003FAF55 /* RealmExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmExtension.swift; sourceTree = "<group>"; };
 		A01C0A78220F5FBA00C46D79 /* SemiModalTableViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemiModalTableViewHeader.swift; sourceTree = "<group>"; };
 		A01C0A7A220F5FCF00C46D79 /* SemiModalTableViewHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SemiModalTableViewHeader.xib; sourceTree = "<group>"; };
 		A01DDE78220F69B20065BA34 /* Presentr.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Presentr.framework; path = Carthage/Build/iOS/Presentr.framework; sourceTree = "<group>"; };
@@ -275,7 +273,6 @@
 		A0101C65220B4134003FAF55 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				A0101C66220B4160003FAF55 /* RealmExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -509,7 +506,6 @@
 				4EE4579622094C6A0017B9BF /* RegisterViewController.swift in Sources */,
 				4E5C52FA220C2B9600FABADB /* SemiModalTableViewCell.swift in Sources */,
 				4EBA46132204305C00AB71B1 /* Const.swift in Sources */,
-				A0101C67220B4160003FAF55 /* RealmExtension.swift in Sources */,
 				4ECCBEA22202D99D0045CE1D /* StoryboardSegues.swift in Sources */,
 				4E5C52FF220D225800FABADB /* RealmModel.swift in Sources */,
 				4ECCBEA12202D99D0045CE1D /* StoryboardScenes.swift in Sources */,

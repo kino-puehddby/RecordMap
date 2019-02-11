@@ -17,10 +17,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAe-5a-0Xl">
-                    <rect key="frame" x="335" y="32.5" width="20" height="20"/>
+                    <rect key="frame" x="330" y="30" width="25" height="25"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="20" id="5Ut-TT-63t"/>
-                        <constraint firstAttribute="height" constant="20" id="D7C-LU-VMT"/>
+                        <constraint firstAttribute="width" constant="25" id="5Ut-TT-63t"/>
+                        <constraint firstAttribute="height" constant="25" id="D7C-LU-VMT"/>
                     </constraints>
                     <fontDescription key="fontDescription" name=".SFNSText" family=".SF NS Text" pointSize="36"/>
                 </button>
@@ -43,6 +43,7 @@
             <connections>
                 <outlet property="favoriteRegisterButton" destination="WAe-5a-0Xl" id="qLM-tm-qrZ"/>
             </connections>
+            <point key="canvasLocation" x="85.599999999999994" y="48.125937031484263"/>
         </view>
     </objects>
 </document>

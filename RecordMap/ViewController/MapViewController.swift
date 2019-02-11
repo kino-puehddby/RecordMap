@@ -115,7 +115,7 @@ final class MapViewController: UIViewController {
         
         semiModalVC.addFavoriteTrigger
             .subscribe(onNext: { [unowned self] in
-                self.presentRegister()
+                self.presentRegister(registerMode: .add)
             })
             .disposed(by: disposeBag)
         
@@ -130,7 +130,6 @@ final class MapViewController: UIViewController {
                 self.setRegion(coordinate: coordinate)
                 self.floatingPanelController.move(to: .tip, animated: true)
                 self.semiModalVC.table.deselectRow(at: [0, selected], animated: true)
-                self.mapView.selectAnnotation(self.mapView.annotations[selected], animated: true)
             })
             .disposed(by: disposeBag)
         
@@ -138,6 +137,12 @@ final class MapViewController: UIViewController {
             .subscribe(onNext: { [unowned self] index in
                 self.mapView.removeAnnotation(self.mapView.annotations[index])
                 self.reloadMapView()
+            })
+            .disposed(by: disposeBag)
+        
+        semiModalVC.editTrigger
+            .subscribe(onNext: { [unowned self] index in
+                self.presentRegister(registerMode: .edit, index: index)
             })
             .disposed(by: disposeBag)
         
@@ -198,10 +203,12 @@ final class MapViewController: UIViewController {
         }
     }
     
-    func presentRegister() {
+    func presentRegister(registerMode: RegisterMode, index: Int? = nil) {
         let vc = StoryboardScene.Register.initialScene.instantiate()
         vc.latitude.accept(latitude)
         vc.longitude.accept(longitude)
+        vc.selectedIndex.accept(index)
+        vc.registerMode = registerMode
         vc.delegate = self
         updateAddress(to: vc, latitude: latitude, longitude: longitude)
         customPresentViewController(presenter, viewController: vc, animated: true)

@@ -26,33 +26,6 @@ class RealmModel: Object {
     }
     
     /**
-     データの更新を行う
-     */
-    func update(update: () -> Void) {
-        let realm = try! Realm()
-        
-        do {
-            try realm.write {
-                update()
-            }
-        } catch let error {
-            debugPrint(error)
-        }
-    }
-    
-    func add(_ object: Object) {
-        let realm = try! Realm()
-        
-        do {
-            try realm.write {
-                realm.add(object)
-            }
-        } catch {
-            debugPrint("*** realm error: can't add object to realm ***")
-        }
-    }
-    
-    /**
      データの削除を行う
      */
     func delete() {
@@ -64,16 +37,15 @@ class RealmModel: Object {
     }
     
     /**
-     データの削除を行う
+     データの追加を行う
      */
-    class func delete() {
+    class func add(_ object: Object) {
         let realm = try! Realm()
-        
         do {
             try realm.write {
-                realm.delete(realm.objects(self))
+                realm.add(object)
             }
-        } catch let error {
+        } catch {
             debugPrint(error)
         }
     }

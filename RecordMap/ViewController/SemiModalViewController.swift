@@ -11,6 +11,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RealmSwift
+import Presentr
 
 final class SemiModalViewController: UIViewController {
 
@@ -22,6 +23,9 @@ final class SemiModalViewController: UIViewController {
     var addFavoriteTrigger = PublishSubject<Void>()
     var selected = PublishSubject<Int>()
     var deleted = PublishSubject<Int>()
+    var editTrigger = PublishSubject<Int>()
+    
+    let presenter: Presentr = Presentr(presentationType: .popup)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,8 +66,10 @@ extension SemiModalViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = SemiModalTableViewHeader.loadFromNib()
-        header.button.rx.tap
-            .bind(to: addFavoriteTrigger)
+        header.button.rx.tap.asDriver()
+            .drive(onNext: { [unowned self] in
+                self.addFavoriteTrigger.onNext(())
+            })
             .disposed(by: disposeBag)
         return header
     }
@@ -76,15 +82,24 @@ extension SemiModalViewController: UITableViewDelegate {
         return true
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        switch editingStyle {
-        case .delete:
-            favoriteList.value[indexPath.row].delete()
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            deleted.onNext(indexPath.row)
-        default:
-            break
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let edit = UITableViewRowAction(style: .normal, title: "Edit") { [unowned self] (_, indexPath) in
+            self.editAction(indexPath: indexPath)
         }
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { [unowned self] (_, indexPath) in
+            self.deleteAction(indexPath: indexPath)
+        }
+        return [edit, delete]
+    }
+    
+    func editAction(indexPath: IndexPath) {
+        editTrigger.onNext(indexPath.row)
+    }
+    
+    func deleteAction(indexPath: IndexPath) {
+        favoriteList.value[indexPath.row].delete()
+        tableView.deleteRows(at: [indexPath], with: .fade)
+        deleted.onNext(indexPath.row)
     }
 }
 

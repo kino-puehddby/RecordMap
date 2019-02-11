@@ -42,10 +42,12 @@ internal enum L10n {
   }
 
   internal enum Register {
-    internal enum TextField {
-      /// 表示名を入力してください。
-      internal static let placeholder = L10n.tr("Localizable", "Register.TextField.Placeholder")
-    }
+    /// お気に入り登録
+    internal static let add = L10n.tr("Localizable", "Register.Add")
+    /// 登録名編集
+    internal static let edit = L10n.tr("Localizable", "Register.Edit")
+    /// 表示名を入力してください。
+    internal static let placeholder = L10n.tr("Localizable", "Register.Placeholder")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length

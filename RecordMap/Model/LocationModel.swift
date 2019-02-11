@@ -30,4 +30,19 @@ final class LocationModel: RealmModel {
         let realm = try! Realm()
         return realm.objects(self)
     }
+    
+    static func update(new: LocationModel, at index: Int) {
+        let realm = try! Realm()
+        var target = LocationModel.read()[index]
+        do {
+            try realm.write {
+                target.name = new.name
+                target.address = new.address
+                target.latitude = new.latitude
+                target.longitude = new.longitude
+            }
+        } catch {
+            debugPrint("\(error) at \(target)")
+        }
+    }
 }
