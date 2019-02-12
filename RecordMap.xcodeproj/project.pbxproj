@@ -14,8 +14,8 @@
 		4E5C52FB220C2B9600FABADB /* SemiModalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E5C52F9220C2B9600FABADB /* SemiModalTableViewCell.xib */; };
 		4E5C52FD220D21D700FABADB /* RealmMigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5C52FC220D21D700FABADB /* RealmMigrator.swift */; };
 		4E5C52FF220D225800FABADB /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5C52FE220D225800FABADB /* RealmModel.swift */; };
+		4E8383CA221270AB0035BD25 /* PromoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8383C9221270AB0035BD25 /* PromoteView.swift */; };
 		4EBA460D22041BF800AB71B1 /* PromoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EBA460C22041BF800AB71B1 /* PromoteView.xib */; };
-		4EBA460F22041C1B00AB71B1 /* PromoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBA460E22041C1B00AB71B1 /* PromoteView.swift */; };
 		4EBA46132204305C00AB71B1 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBA46122204305C00AB71B1 /* Const.swift */; };
 		4ECCBE8A2202D78F0045CE1D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4ECCBE892202D78F0045CE1D /* Localizable.strings */; };
 		4ECCBEA12202D99D0045CE1D /* StoryboardScenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECCBE9D2202D99D0045CE1D /* StoryboardScenes.swift */; };
@@ -54,8 +54,8 @@
 		4E5C52F9220C2B9600FABADB /* SemiModalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SemiModalTableViewCell.xib; sourceTree = "<group>"; };
 		4E5C52FC220D21D700FABADB /* RealmMigrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMigrator.swift; sourceTree = "<group>"; };
 		4E5C52FE220D225800FABADB /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
+		4E8383C9221270AB0035BD25 /* PromoteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromoteView.swift; sourceTree = "<group>"; };
 		4EBA460C22041BF800AB71B1 /* PromoteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromoteView.xib; sourceTree = "<group>"; };
-		4EBA460E22041C1B00AB71B1 /* PromoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PromoteView.swift; path = /Users/user/github/RecordMap/RecordMap/View/PromoteView.swift; sourceTree = "<absolute>"; };
 		4EBA46122204305C00AB71B1 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		4ECCBE892202D78F0045CE1D /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		4ECCBE9D2202D99D0045CE1D /* StoryboardScenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoryboardScenes.swift; path = RecordMap/Utils/Generated/StoryboardScenes.swift; sourceTree = SOURCE_ROOT; };
@@ -132,7 +132,7 @@
 		4EBA460B22041BDB00AB71B1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4EBA460E22041C1B00AB71B1 /* PromoteView.swift */,
+				4E8383C9221270AB0035BD25 /* PromoteView.swift */,
 				A01C0A78220F5FBA00C46D79 /* SemiModalTableViewHeader.swift */,
 				4E5C52F8220C2B9600FABADB /* SemiModalTableViewCell.swift */,
 			);
@@ -253,7 +253,6 @@
 				4ECCBEB02202FCF00045CE1D /* ViewController */,
 				4EBA460B22041BDB00AB71B1 /* View */,
 				A0101C62220B3472003FAF55 /* Model */,
-				A0101C65220B4134003FAF55 /* Extensions */,
 				4ECCBE8B2202D8170045CE1D /* Units */,
 				4ECCBE872202D75A0045CE1D /* Resources */,
 				4EE4579F220973150017B9BF /* SupportingFiles */,
@@ -268,13 +267,6 @@
 				A0101C63220B348B003FAF55 /* LocationModel.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		A0101C65220B4134003FAF55 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F5C7B023E6E4A3327C3CCE29 /* Frameworks */ = {
@@ -496,11 +488,11 @@
 			files = (
 				A01C0A79220F5FBA00C46D79 /* SemiModalTableViewHeader.swift in Sources */,
 				4E3453F0220843B3007DAC66 /* SemiModalViewController.swift in Sources */,
+				4E8383CA221270AB0035BD25 /* PromoteView.swift in Sources */,
 				A0101C64220B348B003FAF55 /* LocationModel.swift in Sources */,
 				4E5C52FD220D21D700FABADB /* RealmMigrator.swift in Sources */,
 				4EF598122202AEE500B84379 /* MapViewController.swift in Sources */,
 				4EF598102202AEE500B84379 /* AppDelegate.swift in Sources */,
-				4EBA460F22041C1B00AB71B1 /* PromoteView.swift in Sources */,
 				4ECCBEA42202D99D0045CE1D /* Assets.swift in Sources */,
 				4ECCBEA32202D99D0045CE1D /* LocalizableStrings.swift in Sources */,
 				4EE4579622094C6A0017B9BF /* RegisterViewController.swift in Sources */,
